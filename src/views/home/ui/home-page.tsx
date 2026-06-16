@@ -1,13 +1,29 @@
-import { Button } from "@/shared/ui/button";
+import { Hero } from "@/widgets/hero";
+import { Numbers } from "@/widgets/numbers";
+import { Positioning } from "@/widgets/positioning";
+import { Formats } from "@/widgets/formats";
+import { Additions } from "@/widgets/additions";
+import { Service } from "@/widgets/service";
+import { Decor } from "@/widgets/decor";
+import { Prices } from "@/widgets/prices";
+import { Approach } from "@/widgets/approach";
+import { FormRequest } from "@/widgets/form-request";
+import { SiteFooter } from "@/widgets/site-footer";
 
 export function HomePage() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center gap-6 p-8">
-      <h1 className="text-3xl font-bold tracking-tight">CATERING</h1>
-      <p className="text-muted-foreground">
-        Next.js 16 · React 19 · Tailwind 4 · shadcn/ui · FSD
-      </p>
-      <Button>Начать</Button>
+    <main className="flex flex-col">
+      <Hero />
+      <Numbers />
+      <Positioning />
+      <Formats />
+      <Additions />
+      <Service />
+      <Decor />
+      <Prices />
+      <Approach />
+      <FormRequest />
+      <SiteFooter />
     </main>
   );
 }
