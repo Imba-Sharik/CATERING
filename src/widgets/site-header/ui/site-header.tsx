@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Menu } from "lucide-react";
 import { NAV_ITEMS } from "@/shared/config/nav";
+import { MobileMenu } from "./mobile-menu";
 
 export function SiteHeader() {
   return (
@@ -34,14 +34,8 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        {/* Мобайл: бургер */}
-        <button
-          type="button"
-          aria-label="Меню"
-          className="flex size-6 items-center justify-center text-foreground md:hidden"
-        >
-          <Menu className="size-6" strokeWidth={1.5} />
-        </button>
+        {/* Мобайл: бургер + фуллскрин-меню */}
+        <MobileMenu />
       </div>
     </header>
   );
