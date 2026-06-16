@@ -63,14 +63,18 @@ export function Additions() {
             <div key={item.number} className="flex flex-col gap-4 md:gap-12">
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-12">
-                  <Image
-                    src={item.icon}
-                    alt=""
-                    width={item.iconW}
-                    height={item.iconH}
-                    unoptimized
-                    className={`shrink-0 ${item.iconClass}`}
-                  />
+                  {/* Фикс-слот под иконку (по самой широкой), чтобы номера и
+                      заголовки выстраивались в колонку независимо от ширины иконки */}
+                  <div className="flex shrink-0 items-center md:w-[58px]">
+                    <Image
+                      src={item.icon}
+                      alt=""
+                      width={item.iconW}
+                      height={item.iconH}
+                      unoptimized
+                      className={item.iconClass}
+                    />
+                  </div>
                   <div className="flex items-center gap-3 md:contents">
                     <span className="text-h3">{item.number}</span>
                     <span className="text-h3">{item.title}</span>
