@@ -12,16 +12,16 @@ const TAGS = [
 
 export function Positioning() {
   return (
-    <section className="flex min-h-screen flex-col justify-center bg-background py-24">
-      <Container className="flex flex-col gap-12">
+    <section className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24">
+      <Container className="flex flex-col gap-8 md:gap-12">
         <SectionLabel number="02" name="ПОЗИЦИОНИРОВАНИЕ" />
 
-        <h2 className="max-w-[990px] text-2xl">
+        <h2 className="text-xl md:max-w-[990px] md:text-2xl">
           Как режиссёр выстраивает сцену — мы выстраиваем гастрономическую
           историю вашего вечера
         </h2>
 
-        <div className="relative h-[463px] w-full overflow-hidden rounded-sm">
+        <div className="relative h-[269px] w-full overflow-hidden rounded-sm md:h-[463px]">
           <Image
             src="/images/positioning/positioning.jpg"
             alt="Кейтеринг на открытой площадке у воды"
@@ -32,7 +32,7 @@ export function Positioning() {
           />
         </div>
 
-        <div className="flex flex-wrap items-center gap-x-[120px] gap-y-6">
+        <div className="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-center md:gap-x-[120px] md:gap-y-6">
           {TAGS.map((tag) => (
             <Tag key={tag.number} number={tag.number} label={tag.label} />
           ))}

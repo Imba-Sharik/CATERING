@@ -14,7 +14,7 @@ function Field({ label, className, id, ...props }: FieldProps) {
       <input
         id={fieldId}
         className={cn(
-          "w-full border-b border-foreground bg-transparent pb-1 text-center text-sm outline-none placeholder:text-muted-foreground focus:border-foreground",
+          "w-[160px] border-b border-foreground bg-transparent pb-1 text-center text-sm outline-none placeholder:text-muted-foreground focus:border-foreground",
           className,
         )}
         {...props}

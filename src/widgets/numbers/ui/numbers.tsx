@@ -12,42 +12,51 @@ const STATS = [
 
 export function Numbers() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-24">
+    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-14 md:items-center md:py-24">
+      {/* Десктоп: фуллскрин-фон */}
       <Image
         src="/images/numbers/numbers-bg.jpg"
         alt=""
         fill
         quality={85}
         sizes="100vw"
-        className="pointer-events-none object-cover"
+        className="pointer-events-none hidden object-cover md:block"
       />
 
       <Container className="relative">
-        <div className="grid grid-cols-2 gap-x-[200px] gap-y-12">
+        <div className="flex flex-col gap-8 md:grid md:grid-cols-2 md:gap-x-[200px] md:gap-y-12">
           <SectionLabel
             number="01"
             name="ДОВЕРИЕ · ЦИФРЫ"
-            className="col-start-1 row-start-1"
+            className="md:col-start-1 md:row-start-1"
           />
 
-          <div className="col-start-1 row-start-2 flex flex-col gap-8">
-            <h2 className="text-2xl">
+          <div className="flex flex-col gap-6 md:col-start-1 md:row-start-2 md:gap-8">
+            <h2 className="text-xl md:text-2xl">
               Мы понимаем
-              <br />
-              не только гастрономию,
-              <br />
-              но и механику события.
+              <br className="hidden md:inline" /> не только гастрономию,
+              <br className="hidden md:inline" /> но и механику события.
             </h2>
-            <p className="text-base font-normal">
+            <p className="max-w-[281px] text-sm font-normal md:max-w-none md:text-base">
               Тайминг, логистику, движение гостей,
-              <br />
-              ритм вечера – это то, с чем мы работаем
-              <br />
-              уже больше 10 лет.
+              <br className="hidden md:inline" /> ритм вечера – это то, с чем мы
+              работаем
+              <br className="hidden md:inline" /> уже больше 10 лет.
             </p>
           </div>
 
-          <div className="col-start-2 row-start-2 flex flex-col gap-8 py-2">
+          {/* Мобайл: контейнерное фото */}
+          <div className="relative h-[256px] w-full overflow-hidden rounded-sm md:hidden">
+            <Image
+              src="/images/numbers/numbers-bg.jpg"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+
+          <div className="flex flex-col gap-8 md:col-start-2 md:row-start-2 md:py-2">
             {STATS.map((stat, i) => (
               <div key={stat.value} className="flex flex-col gap-8">
                 {i > 0 && <Divider />}

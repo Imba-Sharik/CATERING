@@ -13,8 +13,8 @@ function Stat({ value, caption, className, ...props }: StatProps) {
       className={cn("flex flex-col gap-4 whitespace-nowrap", className)}
       {...props}
     >
-      <span className="text-4xl">{value}</span>
-      <span className="text-base font-normal text-muted-foreground">
+      <span className="text-3xl md:text-4xl">{value}</span>
+      <span className="text-sm font-normal text-muted-foreground md:text-base">
         {caption}
       </span>
     </div>

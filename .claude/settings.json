@@ -168,7 +168,9 @@
       "Bash(mv hero-bg.jpg hero-logo.svg logomark.svg hero/)",
       "Bash(mv numbers-bg.jpg numbers/)",
       "Bash(mv positioning.jpg positioning/)",
-      "Bash(mv format-1.jpg format-2.jpg format-3.jpg format-4.jpg formats/)"
+      "Bash(mv format-1.jpg format-2.jpg format-3.jpg format-4.jpg formats/)",
+      "Bash(node -e \"console.log\\(require\\('lucide-react'\\)?'lucide: yes':''\\)\")",
+      "Bash(curl -s -o public/images/numbers/numbers-m.jpg -w \"%{http_code} %{size_download} %{content_type}\\\\n\" \"https://www.figma.com/api/mcp/asset/7dcc59a2-eb76-4d18-a12c-4e0cadfc4b27\")"
     ],
     "additionalDirectories": [
       "D:\\CATERING-tmp\\.git",

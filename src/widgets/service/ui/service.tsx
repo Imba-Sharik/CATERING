@@ -13,38 +13,50 @@ const ITEMS = [
 
 export function Service() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-14">
+    <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-14 md:items-center">
+      {/* Десктоп: фуллскрин-фон */}
       <Image
         src="/images/service/service-bg.jpg"
         alt=""
         fill
         quality={85}
         sizes="100vw"
-        className="pointer-events-none object-cover"
+        className="pointer-events-none hidden object-cover md:block"
       />
 
-      <Container className="relative flex flex-col gap-12">
+      <Container className="relative flex flex-col gap-8 md:gap-12">
         <SectionLabel number="05" name="СЕРВИС" />
 
-        <div className="flex flex-col items-start gap-x-[200px] gap-y-12 md:flex-row md:items-end">
-          <div className="flex flex-col gap-8 md:min-h-[689px]">
-            <h2 className="text-2xl">Сервис как система</h2>
-            <p className="text-base font-normal">
+        <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-x-[200px] md:gap-y-12">
+          <div className="flex flex-col gap-6 md:min-h-[689px] md:gap-8">
+            <h2 className="text-xl md:text-2xl">Сервис как система</h2>
+            <p className="text-sm font-normal md:text-base">
               Собственная Академия Сервиса.
-              <br />
-              Все сотрудники проходят внутреннюю
-              <br />
-              подготовку по единым стандартам LOFT HALL.
+              <br className="hidden md:inline" /> Все сотрудники проходят
+              внутреннюю
+              <br className="hidden md:inline" /> подготовку по единым стандартам
+              LOFT HALL.
             </p>
           </div>
 
-          <div className="flex w-full max-w-[632px] flex-col gap-8">
+          {/* Мобайл: контейнерное фото */}
+          <div className="relative h-[256px] w-full overflow-hidden rounded-sm md:hidden">
+            <Image
+              src="/images/service/service-bg.jpg"
+              alt=""
+              fill
+              sizes="100vw"
+              className="object-cover"
+            />
+          </div>
+
+          <div className="flex w-full flex-col gap-8 md:max-w-[632px]">
             {ITEMS.map((item, i) => (
               <div key={item.number} className="flex flex-col gap-8">
-                {i > 0 && <Divider />}
-                <div className="flex items-center gap-24">
-                  <span className="text-xl">{item.number}</span>
-                  <span className="text-xl">{item.title}</span>
+                {i > 0 && <Divider className="hidden md:block" />}
+                <div className="flex items-center gap-3 md:gap-24">
+                  <span className="text-lg md:text-xl">{item.number}</span>
+                  <span className="text-lg md:text-xl">{item.title}</span>
                 </div>
               </div>
             ))}

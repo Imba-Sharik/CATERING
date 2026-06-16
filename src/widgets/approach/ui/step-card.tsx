@@ -6,18 +6,18 @@ type StepCardProps = {
   title: string;
   /** Порядковый шаг (1–7) — сколько сегментов прогресса залито. */
   step: number;
-  /** Показывать стрелку-коннектор к следующему шагу. */
+  /** Показывать стрелку-коннектор к следующему шагу (только десктоп). */
   hasConnector?: boolean;
 };
 
 function StepProgress({ step }: { step: number }) {
   return (
-    <div className="absolute top-[377px] left-[25px] flex gap-px">
+    <div className="flex gap-px self-start">
       {Array.from({ length: step }).map((_, i) => (
         <span
           key={i}
           className={cn(
-            "h-[21px] w-7 bg-foreground",
+            "h-3 w-5 bg-foreground md:h-[21px] md:w-7",
             step === 1
               ? "rounded-full"
               : i === 0
@@ -34,13 +34,11 @@ function StepProgress({ step }: { step: number }) {
 
 export function StepCard({ number, title, step, hasConnector }: StepCardProps) {
   return (
-    <article className="relative h-[420px] w-[255px] shrink-0 rounded-md border border-foreground bg-card backdrop-blur-sm">
-      <span className="absolute top-[50px] left-1/2 -translate-x-1/2 text-4xl leading-[143px]">
+    <article className="relative flex h-[215px] w-full shrink-0 flex-col items-center rounded-md border border-foreground bg-card px-4 py-4 backdrop-blur-sm md:h-[420px] md:w-[255px] md:px-[25px] md:py-[50px]">
+      <span className="text-3xl leading-[85px] md:text-4xl md:leading-[143px]">
         {number}
       </span>
-      <span className="absolute top-[260px] left-1/2 w-[205px] -translate-x-1/2 text-center text-lg">
-        {title}
-      </span>
+      <span className="my-auto text-center text-[14px] md:text-lg">{title}</span>
       <StepProgress step={step} />
 
       {hasConnector && (
@@ -50,7 +48,7 @@ export function StepCard({ number, title, step, hasConnector }: StepCardProps) {
           width={53}
           height={15}
           unoptimized
-          className="absolute top-[207px] left-[309px] w-[53px]"
+          className="absolute top-[207px] left-[309px] hidden w-[53px] md:block"
         />
       )}
     </article>

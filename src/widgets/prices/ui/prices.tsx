@@ -16,56 +16,58 @@ const CARDS = [
   },
 ] as const;
 
+function PriceCard({ card }: { card: (typeof CARDS)[number] }) {
+  return (
+    <article className="relative h-[101px] overflow-hidden rounded-md border border-foreground p-4 md:h-auto md:py-6 md:pr-[200px] md:pl-8">
+      <Image
+        src={card.image}
+        alt={card.title}
+        fill
+        sizes="(max-width: 768px) 100vw, 420px"
+        className="object-cover"
+      />
+      <div className="absolute inset-0 bg-black/60" />
+
+      <div className="relative flex h-full flex-col justify-between md:h-auto md:w-[337px] md:justify-start md:gap-24">
+        <h3 className="text-lg md:w-[210px] md:text-xl">{card.title}</h3>
+        <p className="text-xs font-normal text-muted-foreground md:w-[203px] md:text-base">
+          {card.price}
+        </p>
+      </div>
+    </article>
+  );
+}
+
 export function Prices() {
   return (
     <section
       id="prices"
-      className="flex min-h-screen flex-col justify-center bg-background py-24"
+      className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24"
     >
-      <Container className="flex flex-col gap-12">
+      <Container className="flex flex-col gap-8 md:gap-12">
         <SectionLabel number="07" name="ЦЕНЫ" />
 
         <div className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
-          <h2 className="text-2xl">
-            Стоимость
-            <br />
-            кейтеринга в Москве
-          </h2>
-          <p className="max-w-[255px] rounded-md border border-muted-foreground px-6 py-4 text-sm font-normal text-muted-foreground">
+          <h2 className="text-xl md:text-2xl">Стоимость кейтеринга в Москве</h2>
+          <p className="h-[64px] w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-xs font-normal text-muted-foreground md:h-auto md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm">
             Сервис: +20% от стоимости меню
-            <br />
-            <br />
-            Дегустация при подтверждении сотрудничества — бесплатно
+            <br className="hidden md:inline" />
+            <br className="hidden md:inline" /> Дегустация при подтверждении
+            сотрудничества — бесплатно
           </p>
         </div>
 
-        <div className="flex flex-col gap-8">
-          <div className="grid grid-cols-3 gap-4">
+        <div className="flex flex-col gap-4 md:gap-8">
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
             {CARDS.map((card) => (
-              <article
-                key={card.title}
-                className="relative flex items-start overflow-hidden rounded-md border border-foreground py-6 pr-[200px] pl-8"
-              >
-                <Image
-                  src={card.image}
-                  alt={card.title}
-                  fill
-                  sizes="(max-width: 768px) 100vw, 420px"
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-black/60" />
-
-                <div className="relative flex w-[337px] flex-col gap-24">
-                  <h3 className="w-[210px] text-xl">{card.title}</h3>
-                  <p className="w-[203px] text-base font-normal text-muted-foreground">
-                    {card.price}
-                  </p>
-                </div>
-              </article>
+              <PriceCard key={card.title} card={card} />
             ))}
           </div>
 
-          <Button variant="outline" className="w-fit">
+          <Button
+            variant="outline"
+            className="h-[25px] w-fit rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
+          >
             Отправить заявку
           </Button>
         </div>

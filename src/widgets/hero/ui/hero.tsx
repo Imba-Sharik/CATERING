@@ -24,8 +24,8 @@ export function Hero() {
 
       <SiteHeader />
 
-      <div className="relative flex w-[387px] max-w-full flex-1 flex-col items-center justify-center gap-12 py-16">
-        <div className="flex flex-col items-center gap-16">
+      <div className="relative flex w-full max-w-[358px] flex-1 flex-col items-center justify-center gap-30 px-4 py-12 md:w-[387px] md:max-w-none md:gap-12 md:px-0">
+        <div className="flex w-full flex-col items-center gap-16">
           <Image
             src="/images/hero/hero-logo.svg"
             alt="CATERING"
@@ -33,26 +33,34 @@ export function Hero() {
             height={80}
             priority
             unoptimized
-            className="h-20 w-[200px]"
+            className="h-[65px] w-[163px] md:h-20 md:w-[200px]"
           />
 
-          <div className="flex flex-col items-center gap-8 text-center">
-            <h1 className="text-3xl">Кейтеринг в Москве</h1>
-            <p className="text-lg">
+          <div className="flex w-full flex-col items-center gap-4 text-center md:gap-8">
+            <h1 className="text-2xl md:text-3xl">Кейтеринг в Москве</h1>
+            <p className="text-sm md:text-lg">
               Гастрономический сценарий для событий любого масштаба
             </p>
-            <div className="flex flex-col items-center gap-1 text-sm font-normal text-muted-foreground">
+            <div className="flex flex-col items-center gap-1 text-xs font-normal text-muted-foreground md:text-sm">
               <span>Московская область</span>
               <span>Москва</span>
             </div>
           </div>
         </div>
 
-        <div className="flex w-[192px] flex-col items-center gap-3">
-          <Button variant="outline" className="w-full">
+        <div className="flex w-[116px] flex-col items-center gap-3 md:w-[192px]">
+          <Button
+            variant="outline"
+            className="h-[30px] w-full text-[8px] md:h-[38px] md:text-sm"
+          >
             Получить предложение
           </Button>
-          <Button variant="outline">Смотреть форматы</Button>
+          <Button
+            variant="outline"
+            className="h-[30px] text-[8px] md:h-[38px] md:text-sm"
+          >
+            Смотреть форматы
+          </Button>
         </div>
       </div>
     </section>
