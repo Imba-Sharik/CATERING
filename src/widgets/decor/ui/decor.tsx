@@ -54,7 +54,7 @@ export function Decor() {
 
               <div className="relative flex w-full flex-col gap-2 md:w-[320px] md:gap-4">
                 <h3 className="text-h3">{card.title}</h3>
-                <p className="text-xs font-normal md:max-w-[282px] md:text-sm">
+                <p className="text-sm font-normal md:max-w-[282px] md:text-sm">
                   {card.subtitle}
                 </p>
               </div>

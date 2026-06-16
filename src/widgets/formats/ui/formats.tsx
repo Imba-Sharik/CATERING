@@ -64,12 +64,12 @@ function FormatCard({ card }: { card: FormatCard }) {
       <div className="relative flex h-full flex-col justify-between">
         <div className="flex w-full flex-col gap-2 md:w-[186px] md:gap-4">
           <h3 className="text-h3">{card.title}</h3>
-          <p className="text-xs font-normal md:text-sm">{card.subtitle}</p>
+          <p className="text-sm font-normal md:text-sm">{card.subtitle}</p>
         </div>
         <button
           type="button"
           onClick={() => requestFormat(card.format)}
-          className="inline-flex w-fit items-center rounded-lg border border-foreground px-4 py-2 text-xs whitespace-nowrap transition-colors hover:bg-foreground/10"
+          className="inline-flex w-fit items-center rounded-lg border border-foreground px-4 py-2 text-xs whitespace-nowrap transition-colors hover:bg-foreground/10 md:text-sm"
         >
           {card.chip}
         </button>

@@ -81,7 +81,7 @@ export function FormRequest() {
             <Reveal
               as="div"
               delay={200}
-              className="flex flex-col items-center gap-2 text-center text-xs"
+              className="flex flex-col items-center gap-2 text-center text-sm"
             >
               <p className="max-w-[193px]">
                 Дегустация при подтверждении — бесплатно. Работаем в Москве,
@@ -141,7 +141,7 @@ export function FormRequest() {
                 ),
               )}
             </div>
-            <div className="flex flex-wrap justify-center gap-3">
+            <div className="grid w-fit grid-cols-2 gap-3">
               {OPTIONS.map((option) => (
                 <Chip
                   key={option}
@@ -149,7 +149,7 @@ export function FormRequest() {
                   onClick={() =>
                     setFormat((prev) => (prev === option ? "" : option))
                   }
-                  className={cn(format === option && "bg-foreground/15")}
+                  className={cn("w-full", format === option && "bg-foreground/15")}
                 >
                   {option}
                 </Chip>
@@ -161,7 +161,7 @@ export function FormRequest() {
             <Button
               type="button"
               variant="outline"
-              className="h-[25px] rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
+              className="h-[36px] rounded-lg px-6 py-2 text-sm md:h-[48px] md:rounded-md md:px-8 md:text-base"
             >
               Отправить заявку
             </Button>

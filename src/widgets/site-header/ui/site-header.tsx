@@ -19,7 +19,7 @@ export function SiteHeader() {
             unoptimized
             className="h-[20px] w-[27px] lg:h-[26px] lg:w-[41px]"
           />
-          <span className="text-xs whitespace-nowrap lg:text-sm">
+          <span className="text-sm whitespace-nowrap lg:text-sm">
             Catering by Loft Hall
           </span>
         </Link>

@@ -15,13 +15,15 @@ export function DragScroll({
   function onPointerDown(e: React.PointerEvent<HTMLDivElement>) {
     if (e.pointerType !== "mouse") return;
     const el = ref.current;
-    if (!el) return;
+    if (!el || el.scrollWidth <= el.clientWidth) return; // нет горизонтального скролла
+    e.preventDefault(); // гасим выделение текста и авто-скролл страницы
     drag.current = { active: true, startX: e.clientX, scrollLeft: el.scrollLeft };
     el.setPointerCapture(e.pointerId);
   }
 
   function onPointerMove(e: React.PointerEvent<HTMLDivElement>) {
     if (!drag.current.active || !ref.current) return;
+    e.preventDefault();
     ref.current.scrollLeft =
       drag.current.scrollLeft - (e.clientX - drag.current.startX);
   }

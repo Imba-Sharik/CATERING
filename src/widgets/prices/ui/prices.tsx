@@ -31,7 +31,7 @@ function PriceCard({ card }: { card: (typeof CARDS)[number] }) {
 
       <div className="relative flex h-full flex-col justify-between md:h-auto md:w-[337px] md:justify-start md:gap-24">
         <h3 className="text-h3 md:w-[210px]">{card.title}</h3>
-        <p className="text-xs font-normal text-muted-foreground md:w-[203px] md:text-base">
+        <p className="text-sm font-normal text-muted-foreground md:w-[203px] md:text-base">
           {card.price}
         </p>
       </div>
@@ -57,7 +57,7 @@ export function Prices() {
           <Reveal
             as="p"
             delay={120}
-            className="h-[64px] w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-xs font-normal text-muted-foreground md:h-auto md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm"
+            className="h-[64px] w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-sm font-normal text-muted-foreground md:h-auto md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm"
           >
             Сервис: +20% от стоимости меню
             <br className="hidden md:inline" />
@@ -79,7 +79,7 @@ export function Prices() {
             <Button
               asChild
               variant="outline"
-              className="h-[25px] w-fit rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
+              className="h-[30px] w-fit rounded-lg px-4 py-2 text-sm md:h-[38px] md:rounded-md md:px-6 md:text-sm"
             >
               <a href="#form">Отправить заявку</a>
             </Button>

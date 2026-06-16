@@ -44,7 +44,7 @@ export function Hero() {
             <Reveal
               as="div"
               delay={360}
-              className="flex flex-col items-center gap-1 text-xs font-normal text-muted-foreground md:text-sm"
+              className="flex flex-col items-center gap-1 text-sm font-normal text-muted-foreground md:text-sm"
             >
               <span>Московская область</span>
               <span>Москва</span>
@@ -54,19 +54,19 @@ export function Hero() {
 
         <Reveal
           delay={480}
-          className="flex w-[116px] flex-col items-center gap-3 md:w-[192px]"
+          className="flex w-fit flex-col items-stretch gap-3"
         >
           <Button
             asChild
             variant="outline"
-            className="h-[30px] w-full text-[8px] md:h-[38px] md:text-sm"
+            className="h-[36px] w-full text-sm whitespace-nowrap md:h-[38px]"
           >
             <a href="#form">Получить предложение</a>
           </Button>
           <Button
             asChild
             variant="outline"
-            className="h-[30px] text-[8px] md:h-[38px] md:text-sm"
+            className="h-[36px] w-full text-sm whitespace-nowrap md:h-[38px]"
           >
             <a href="#formats">Смотреть форматы</a>
           </Button>

@@ -63,7 +63,7 @@ export function MobileMenu() {
                 unoptimized
                 className="h-[20px] w-[27px]"
               />
-              <span className="text-xs whitespace-nowrap">
+              <span className="text-sm whitespace-nowrap">
                 Catering by Loft Hall
               </span>
             </Link>

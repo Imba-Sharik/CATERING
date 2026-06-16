@@ -6,12 +6,12 @@ type SectionLabelProps = React.ComponentProps<"div"> & {
   name: string;
 };
 
-// Метка секции: порядковый номер + название мелким капслоком (8px).
+// Метка секции: порядковый номер + название мелким капслоком (14px).
 function SectionLabel({ number, name, className, ...props }: SectionLabelProps) {
   return (
     <div
       className={cn(
-        "flex items-center gap-16 text-xs font-normal whitespace-nowrap",
+        "flex items-center gap-16 text-sm font-normal whitespace-nowrap",
         className,
       )}
       {...props}

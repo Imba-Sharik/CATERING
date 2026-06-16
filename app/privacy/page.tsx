@@ -109,13 +109,13 @@ export default function PrivacyPage() {
             unoptimized
             className="h-[20px] w-[27px] lg:h-[26px] lg:w-[41px]"
           />
-          <span className="text-xs whitespace-nowrap lg:text-sm">
+          <span className="text-sm whitespace-nowrap lg:text-sm">
             Catering by Loft Hall
           </span>
         </Link>
         <Link
           href="/"
-          className="text-xs whitespace-nowrap text-foreground/90 underline-offset-4 transition-colors hover:text-foreground hover:underline lg:text-sm"
+          className="text-sm whitespace-nowrap text-foreground/90 underline-offset-4 transition-colors hover:text-foreground hover:underline lg:text-sm"
         >
           На главную
         </Link>
@@ -124,7 +124,7 @@ export default function PrivacyPage() {
       <Container className="flex flex-col gap-10 py-section md:gap-14">
         <div className="flex flex-col gap-4">
           <h1 className="text-h2">Политика конфиденциальности</h1>
-          <p className="text-xs font-normal text-muted-foreground md:text-sm">
+          <p className="text-sm font-normal text-muted-foreground md:text-sm">
             Обновлено: {UPDATED}
           </p>
         </div>

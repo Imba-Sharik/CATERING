@@ -87,7 +87,7 @@ export function Additions() {
                     <span className="text-h3">{item.title}</span>
                   </div>
                 </div>
-                <p className="max-w-[170px] text-xs font-normal md:max-w-none md:text-sm">
+                <p className="max-w-[170px] text-sm font-normal md:max-w-none md:text-sm">
                   {item.descA}
                   <br className="hidden md:inline" /> {item.descB}
                 </p>

@@ -57,11 +57,11 @@ export function SiteFooter() {
         </div>
 
         <div className="flex items-end justify-between gap-24 md:block">
-          <p className="text-xs font-normal md:pt-8 md:text-sm">
+          <p className="text-sm font-normal md:pt-8 md:text-sm">
             CATERING BY LOFTHALL
           </p>
           {/* Мобайл: инфо справа снизу */}
-          <FooterInfo className="flex text-xs md:hidden" />
+          <FooterInfo className="flex text-sm md:hidden" />
         </div>
       </Container>
     </footer>

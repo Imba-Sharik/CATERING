@@ -11,7 +11,7 @@ function Chip({
     <button
       type={type}
       className={cn(
-        "inline-flex items-center justify-center rounded-lg border border-foreground px-4 py-2 text-center text-xs whitespace-nowrap transition-colors hover:bg-foreground/10",
+        "inline-flex items-center justify-center rounded-lg border border-foreground px-4 py-2 text-center text-sm whitespace-nowrap transition-colors hover:bg-foreground/10",
         className,
       )}
       {...props}
