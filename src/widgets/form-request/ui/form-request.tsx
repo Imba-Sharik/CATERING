@@ -23,7 +23,10 @@ const OPTIONS = [
 
 export function FormRequest() {
   return (
-    <section id="form" className="bg-background py-24">
+    <section
+      id="form"
+      className="flex min-h-screen flex-col justify-center bg-background py-24"
+    >
       <Container className="flex flex-col items-start gap-20">
         <SectionLabel number="09" name="ФОРМА ЗАЯВКИ" />
 

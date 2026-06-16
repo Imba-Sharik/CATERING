@@ -6,7 +6,7 @@ export function Hero() {
   return (
     <section
       id="hero"
-      className="relative flex min-h-[900px] flex-col items-center overflow-hidden bg-background"
+      className="relative flex min-h-screen flex-col items-center overflow-hidden bg-background"
     >
       {/* Фон */}
       <div aria-hidden className="pointer-events-none absolute inset-0">

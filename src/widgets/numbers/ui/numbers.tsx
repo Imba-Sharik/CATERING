@@ -12,7 +12,7 @@ const STATS = [
 
 export function Numbers() {
   return (
-    <section className="relative flex min-h-[900px] items-center overflow-hidden bg-background py-24">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-24">
       <Image
         src="/images/numbers-bg.webp"
         alt=""

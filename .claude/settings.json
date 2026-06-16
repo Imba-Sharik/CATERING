@@ -142,10 +142,27 @@
       "PowerShell($env:CI = \"true\"; pnpm build 2>&1 | Select-Object -Last 14)",
       "Bash(git add *)",
       "Bash(git commit -q -m 'feat: десктоп-лендинг — перенос дизайна из Figma \\(11 секций, FSD\\) *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(curl -s -o /tmp/service-fig.png \"https://www.figma.com/api/mcp/asset/ca217b42-af5e-421b-abd5-c8f4a2980dde\")",
+      "PowerShell($env:CI = \"true\"; pnpm build 2>&1 | Select-Object -Last 10)",
+      "Bash(curl -s -o /tmp/connector.svg \"https://www.figma.com/api/mcp/asset/59af281c-b372-401e-91f9-2a292aa70a15\")",
+      "PowerShell($env:CI = \"true\"; pnpm build 2>&1 | Select-Object -Last 8)",
+      "Bash(curl -s -o /tmp/stepcard3.png \"https://www.figma.com/api/mcp/asset/f6a8015a-53bb-479d-a998-b025f2df5292\")",
+      "PowerShell($env:CI = \"true\"; pnpm build 2>&1 | Select-Object -Last 7)",
+      "Bash(curl -s -o /tmp/components.png \"https://www.figma.com/api/mcp/asset/871bbc80-de75-4d6d-9348-c5672037b35f\")",
+      "Bash(curl -s -o /tmp/btns.png \"https://www.figma.com/api/mcp/asset/dd0c1feb-8884-43c9-a565-c69574975a44\")",
+      "Bash(curl -s -o /tmp/labels.png \"https://www.figma.com/api/mcp/asset/b1286835-e541-4320-b634-78dcfcc2d964\")",
+      "Bash(curl -s -o /tmp/chip.png \"https://www.figma.com/api/mcp/asset/6636a69b-ece2-4a70-8e9d-f67555ab22b2\")",
+      "PowerShell(pnpm lint 2>&1)",
+      "Bash(curl -s -o /tmp/hookah-fixed.png \"https://www.figma.com/api/mcp/asset/c228d134-1f5b-4368-ba67-f56c9128d877\")",
+      "Bash(curl -s -o /tmp/additions-fixed.png \"https://www.figma.com/api/mcp/asset/cce4e8a3-06cd-4d41-b033-82d41d0ff239\")",
+      "Bash(curl -s -o /tmp/mob-additions.png \"https://www.figma.com/api/mcp/asset/88b37317-2e42-43a1-9468-7410ee06f441\")",
+      "Bash(curl -s -o /tmp/mob-additions2.png \"https://www.figma.com/api/mcp/asset/c2615691-7782-4608-b6d3-c31918ef47c5\")",
+      "Bash(cd /d/CATERING *)"
     ],
     "additionalDirectories": [
-      "D:\\CATERING-tmp\\.git"
+      "D:\\CATERING-tmp\\.git",
+      "d:\\CATERING"
     ]
   }
 }

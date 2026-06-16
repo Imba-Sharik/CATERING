@@ -6,24 +6,32 @@ import { Divider } from "@/shared/ui/divider";
 const ITEMS = [
   {
     icon: "/images/add-1.svg",
+    w: 55,
+    h: 46,
     number: "01",
     title: "Анимационные станции",
     desc: ["Приготовление блюд перед гостями.", "Живое взаимодействие"],
   },
   {
     icon: "/images/add-2.svg",
+    w: 46,
+    h: 46,
     number: "02",
     title: "Бар и миксология",
     desc: ["100+ концепций от классики", "до авторской миксологии"],
   },
   {
     icon: "/images/add-3.svg",
+    w: 36,
+    h: 53,
     number: "03",
     title: "Кальяны",
     desc: ["Премиальный кальянный сервис", "на ведущих брендах"],
   },
   {
     icon: "/images/add-4.svg",
+    w: 58,
+    h: 45,
     number: "04",
     title: "Мастер-классы",
     desc: ["Кулинарные, барные, кальянные —", "как часть сценария события"],
@@ -32,7 +40,7 @@ const ITEMS = [
 
 export function Additions() {
   return (
-    <section className="bg-background py-24">
+    <section className="flex min-h-screen flex-col justify-center bg-background py-24">
       <Container className="flex flex-col gap-12">
         <SectionLabel number="04" name="ДОПОЛНЕНИЯ К ГАСТРОНОМИИ" />
         <h2 className="max-w-[649px] text-2xl">
@@ -48,10 +56,11 @@ export function Additions() {
                   <Image
                     src={item.icon}
                     alt=""
-                    width={55}
-                    height={46}
+                    width={item.w}
+                    height={item.h}
                     unoptimized
-                    className="h-[46px] w-[55px]"
+                    className="shrink-0"
+                    style={{ width: item.w, height: item.h }}
                   />
                   <span className="text-xl">{item.number}</span>
                   <span className="text-xl">{item.title}</span>

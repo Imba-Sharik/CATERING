@@ -9,8 +9,9 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
+        // В дизайн-системе Figma `default` — текст-кнопка (без рамки и заливки).
         default:
-          "border-transparent bg-primary text-primary-foreground hover:bg-primary/90",
+          "border-transparent bg-transparent text-foreground hover:opacity-70",
         outline:
           "border-foreground bg-transparent text-foreground hover:bg-foreground/10",
         ghost:

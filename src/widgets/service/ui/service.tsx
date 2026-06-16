@@ -13,7 +13,7 @@ const ITEMS = [
 
 export function Service() {
   return (
-    <section className="relative flex min-h-[861px] items-center overflow-hidden bg-background py-14">
+    <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-14">
       <Image
         src="/images/service-bg.webp"
         alt=""
@@ -25,8 +25,8 @@ export function Service() {
       <Container className="relative flex flex-col gap-12">
         <SectionLabel number="05" name="СЕРВИС" />
 
-        <div className="flex flex-col items-start gap-x-[200px] gap-y-12 md:flex-row md:items-start">
-          <div className="flex flex-col gap-8">
+        <div className="flex flex-col items-start gap-x-[200px] gap-y-12 md:flex-row md:items-end">
+          <div className="flex flex-col gap-8 md:min-h-[689px]">
             <h2 className="text-2xl">Сервис как система</h2>
             <p className="text-base font-normal">
               Собственная Академия Сервиса.

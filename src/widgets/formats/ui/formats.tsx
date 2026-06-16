@@ -77,7 +77,10 @@ function FormatCard({ card }: { card: FormatCard }) {
 
 export function Formats() {
   return (
-    <section id="formats" className="bg-background py-24">
+    <section
+      id="formats"
+      className="flex min-h-screen flex-col justify-center bg-background py-24"
+    >
       <Container className="flex flex-col gap-12">
         <SectionLabel number="03" name="ФОРМАТЫ МЕРОПРИЯТИЙ" />
         <h2 className="text-2xl">Форматы мероприятий</h2>

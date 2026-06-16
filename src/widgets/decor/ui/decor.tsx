@@ -22,7 +22,7 @@ const CARDS = [
 
 export function Decor() {
   return (
-    <section className="bg-background py-24">
+    <section className="flex min-h-screen flex-col justify-center bg-background py-24">
       <Container className="flex flex-col gap-12">
         <SectionLabel number="06" name="АНТУРАЖ" />
         <h2 className="text-2xl">

@@ -18,7 +18,10 @@ const CARDS = [
 
 export function Prices() {
   return (
-    <section id="prices" className="bg-background py-24">
+    <section
+      id="prices"
+      className="flex min-h-screen flex-col justify-center bg-background py-24"
+    >
       <Container className="flex flex-col gap-12">
         <SectionLabel number="07" name="ЦЕНЫ" />
 

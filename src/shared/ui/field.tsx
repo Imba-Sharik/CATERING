@@ -7,7 +7,8 @@ type FieldProps = React.ComponentProps<"input"> & {
 
 // Поле формы: линия-инпут сверху + подпись снизу по центру.
 function Field({ label, className, id, ...props }: FieldProps) {
-  const fieldId = id ?? React.useId();
+  const generatedId = React.useId();
+  const fieldId = id ?? generatedId;
   return (
     <div className="flex w-full flex-col items-center gap-3">
       <input
