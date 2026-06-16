@@ -27,7 +27,7 @@ export function Service() {
       <Container className="relative flex flex-col gap-8 md:gap-12">
         <SectionLabel number="05" name="СЕРВИС" />
 
-        <div className="flex flex-col gap-8 md:flex-row md:items-start md:gap-x-[clamp(2rem,8vw,12.5rem)] md:gap-y-12">
+        <div className="flex flex-col gap-8 md:flex-row md:items-end md:gap-x-[clamp(4rem,14vw,12.5rem)] md:gap-y-12">
           <div className="flex flex-col gap-6 md:min-h-[689px] md:gap-8">
             <h2 className="text-h2">Сервис как система</h2>
             <p className="text-body font-normal">
