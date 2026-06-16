@@ -15,9 +15,10 @@ export function Service() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-14">
       <Image
-        src="/images/service-bg.webp"
+        src="/images/service/service-bg.jpg"
         alt=""
         fill
+        quality={85}
         sizes="100vw"
         className="pointer-events-none object-cover"
       />

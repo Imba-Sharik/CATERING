@@ -5,7 +5,7 @@ import { Divider } from "@/shared/ui/divider";
 
 const ITEMS = [
   {
-    icon: "/images/add-1.svg",
+    icon: "/images/additions/add-1.svg",
     w: 55,
     h: 46,
     number: "01",
@@ -13,7 +13,7 @@ const ITEMS = [
     desc: ["Приготовление блюд перед гостями.", "Живое взаимодействие"],
   },
   {
-    icon: "/images/add-2.svg",
+    icon: "/images/additions/add-2.svg",
     w: 46,
     h: 46,
     number: "02",
@@ -21,7 +21,7 @@ const ITEMS = [
     desc: ["100+ концепций от классики", "до авторской миксологии"],
   },
   {
-    icon: "/images/add-3.svg",
+    icon: "/images/additions/add-3.svg",
     w: 36,
     h: 53,
     number: "03",
@@ -29,7 +29,7 @@ const ITEMS = [
     desc: ["Премиальный кальянный сервис", "на ведущих брендах"],
   },
   {
-    icon: "/images/add-4.svg",
+    icon: "/images/additions/add-4.svg",
     w: 58,
     h: 45,
     number: "04",

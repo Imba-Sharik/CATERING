@@ -14,9 +14,10 @@ export function Numbers() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden bg-background py-24">
       <Image
-        src="/images/numbers-bg.webp"
+        src="/images/numbers/numbers-bg.jpg"
         alt=""
         fill
+        quality={85}
         sizes="100vw"
         className="pointer-events-none object-cover"
       />

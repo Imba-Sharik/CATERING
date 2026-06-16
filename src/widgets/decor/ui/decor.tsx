@@ -4,17 +4,17 @@ import { SectionLabel } from "@/shared/ui/section-label";
 
 const CARDS = [
   {
-    image: "/images/decor-1.webp",
+    image: "/images/decor/decor-1.jpg",
     title: "Посуда и сервировка",
     subtitle: ["Подбираем под формат и визуальную", "концепцию мероприятия"],
   },
   {
-    image: "/images/decor-2.webp",
+    image: "/images/decor/decor-2.jpg",
     title: "Текстиль",
     subtitle: ["Детали оформления, создающие", "цельный образ события."],
   },
   {
-    image: "/images/decor-3.webp",
+    image: "/images/decor/decor-3.jpg",
     title: "Мебель",
     subtitle: ["Фуршетные и банкетные столы,", "барные станции."],
   },

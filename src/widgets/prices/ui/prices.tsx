@@ -4,13 +4,13 @@ import { SectionLabel } from "@/shared/ui/section-label";
 import { Button } from "@/shared/ui/button";
 
 const CARDS = [
-  { image: "/images/price-1.webp", title: "Завтрак", price: "от 1 500 ₽" },
-  { image: "/images/price-2.webp", title: "Кофе-брейк", price: "от 1 100 ₽" },
-  { image: "/images/price-3.webp", title: "Обед", price: "от 2 000 ₽" },
-  { image: "/images/price-4.webp", title: "Фуршет", price: "от 4 500 ₽" },
-  { image: "/images/price-5.webp", title: "Банкет", price: "от 7 500 ₽" },
+  { image: "/images/prices/price-1.jpg", title: "Завтрак", price: "от 1 500 ₽" },
+  { image: "/images/prices/price-2.jpg", title: "Кофе-брейк", price: "от 1 100 ₽" },
+  { image: "/images/prices/price-3.jpg", title: "Обед", price: "от 2 000 ₽" },
+  { image: "/images/prices/price-4.jpg", title: "Фуршет", price: "от 4 500 ₽" },
+  { image: "/images/prices/price-5.jpg", title: "Банкет", price: "от 7 500 ₽" },
   {
-    image: "/images/price-6.webp",
+    image: "/images/prices/price-6.jpg",
     title: "Гала-ужин",
     price: "Рассчитывается индивидуально",
   },

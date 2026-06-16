@@ -23,9 +23,10 @@ export function Positioning() {
 
         <div className="relative h-[463px] w-full overflow-hidden rounded-sm">
           <Image
-            src="/images/positioning.webp"
+            src="/images/positioning/positioning.jpg"
             alt="Кейтеринг на открытой площадке у воды"
             fill
+            quality={85}
             sizes="(max-width: 768px) 100vw, 1280px"
             className="object-cover"
           />

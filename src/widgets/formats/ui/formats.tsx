@@ -13,26 +13,26 @@ type FormatCard = {
 
 const CARDS: FormatCard[] = [
   {
-    image: "/images/format-1.webp",
+    image: "/images/formats/format-1.jpg",
     title: ["Завтрак.", "Кофе-брейк"],
     subtitle: ["Деловые форматы", "для лёгкого начала события"],
     chip: "Кофе-брейк в офис",
     bakedOverlay: true,
   },
   {
-    image: "/images/format-2.webp",
+    image: "/images/formats/format-2.jpg",
     title: ["Форум.", "Гала-ужин"],
     subtitle: ["Высокая гастрономия —", "каждый штрих как часть постановки"],
     chip: "Выездной банкет",
   },
   {
-    image: "/images/format-3.webp",
+    image: "/images/formats/format-3.jpg",
     title: ["Банкет.", "Фуршет"],
     subtitle: ["От закрытых ужинов до крупных", "корпоративных мероприятий"],
     chip: "Корпоративный фуршет",
   },
   {
-    image: "/images/format-4.webp",
+    image: "/images/formats/format-4.jpg",
     title: ["Кейтеринг", "на свадьбу"],
     subtitle: ["Формат задаёте вы — мы собираем", "под него сервис и атмосферу"],
     chip: "Кейтеринг на свадьбу",

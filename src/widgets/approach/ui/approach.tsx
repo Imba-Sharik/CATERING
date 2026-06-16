@@ -20,9 +20,10 @@ export function Approach() {
       className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-24"
     >
       <Image
-        src="/images/approach-bg.webp"
+        src="/images/approach/approach-bg.jpg"
         alt=""
         fill
+        quality={85}
         sizes="100vw"
         className="pointer-events-none object-cover"
       />

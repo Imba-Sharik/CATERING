@@ -45,7 +45,7 @@ export function StepCard({ number, title, step, hasConnector }: StepCardProps) {
 
       {hasConnector && (
         <Image
-          src="/images/arrow.svg"
+          src="/images/approach/arrow.svg"
           alt=""
           width={53}
           height={15}

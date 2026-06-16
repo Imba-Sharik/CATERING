@@ -8,7 +8,7 @@ export function SiteHeader() {
       <div className="flex flex-1 items-center justify-between">
         <Link href="#" className="flex items-center gap-16">
           <Image
-            src="/images/logomark.svg"
+            src="/images/hero/logomark.svg"
             alt="Catering by Loft Hall"
             width={41}
             height={26}

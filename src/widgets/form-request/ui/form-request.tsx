@@ -38,7 +38,7 @@ export function FormRequest() {
 
             <div className="flex items-center justify-center gap-8">
               <Image
-                src="/images/deco-left.svg"
+                src="/images/form/deco-left.svg"
                 alt=""
                 width={154}
                 height={75}
@@ -49,7 +49,7 @@ export function FormRequest() {
                 Получите расчёт стоимости кейтеринга в течение рабочего дня
               </h2>
               <Image
-                src="/images/deco-right.svg"
+                src="/images/form/deco-right.svg"
                 alt=""
                 width={154}
                 height={75}

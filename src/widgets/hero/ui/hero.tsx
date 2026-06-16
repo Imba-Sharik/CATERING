@@ -11,10 +11,11 @@ export function Hero() {
       {/* Фон */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <Image
-          src="/images/hero-bg.webp"
+          src="/images/hero/hero-bg.jpg"
           alt=""
           fill
           priority
+          quality={85}
           sizes="100vw"
           className="object-cover"
         />
@@ -26,7 +27,7 @@ export function Hero() {
       <div className="relative flex w-[387px] max-w-full flex-1 flex-col items-center justify-center gap-12 py-16">
         <div className="flex flex-col items-center gap-16">
           <Image
-            src="/images/hero-logo.svg"
+            src="/images/hero/hero-logo.svg"
             alt="CATERING"
             width={200}
             height={80}

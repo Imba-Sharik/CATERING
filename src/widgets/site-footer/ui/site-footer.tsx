@@ -9,9 +9,10 @@ export function SiteFooter() {
       className="relative min-h-[317px] overflow-hidden border-t border-foreground bg-background"
     >
       <Image
-        src="/images/footer-bg.webp"
+        src="/images/footer/footer-bg.jpg"
         alt=""
         fill
+        quality={85}
         sizes="100vw"
         className="pointer-events-none scale-x-[-1] object-cover"
       />
@@ -20,7 +21,7 @@ export function SiteFooter() {
       <Container className="relative flex h-full min-h-[317px] flex-col py-16">
         <div className="flex justify-between gap-8">
           <Image
-            src="/images/footer-logo.svg"
+            src="/images/footer/footer-logo.svg"
             alt="Catering by Loft Hall"
             width={229}
             height={91}
