@@ -23,13 +23,13 @@ function PriceCard({ card }: { card: (typeof CARDS)[number] }) {
         src={card.image}
         alt={card.title}
         fill
-        sizes="(max-width: 768px) 100vw, 420px"
+        sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
         className="object-cover"
       />
       <div className="absolute inset-0 bg-black/60" />
 
       <div className="relative flex h-full flex-col justify-between md:h-auto md:w-[337px] md:justify-start md:gap-24">
-        <h3 className="text-lg md:w-[210px] md:text-xl">{card.title}</h3>
+        <h3 className="text-h3 md:w-[210px]">{card.title}</h3>
         <p className="text-xs font-normal text-muted-foreground md:w-[203px] md:text-base">
           {card.price}
         </p>
@@ -42,13 +42,13 @@ export function Prices() {
   return (
     <section
       id="prices"
-      className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24"
+      className="flex min-h-screen flex-col justify-center bg-background py-section"
     >
       <Container className="flex flex-col gap-8 md:gap-12">
         <SectionLabel number="07" name="ЦЕНЫ" />
 
         <div className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
-          <h2 className="text-xl md:text-2xl">Стоимость кейтеринга в Москве</h2>
+          <h2 className="text-h2">Стоимость кейтеринга в Москве</h2>
           <p className="h-[64px] w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-xs font-normal text-muted-foreground md:h-auto md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm">
             Сервис: +20% от стоимости меню
             <br className="hidden md:inline" />
@@ -58,7 +58,7 @@ export function Prices() {
         </div>
 
         <div className="flex flex-col gap-4 md:gap-8">
-          <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
+          <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
             {CARDS.map((card) => (
               <PriceCard key={card.title} card={card} />
             ))}

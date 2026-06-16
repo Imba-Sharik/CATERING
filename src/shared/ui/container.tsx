@@ -5,7 +5,10 @@ import { cn } from "@/shared/lib/utils";
 function Container({ className, ...props }: React.ComponentProps<"div">) {
   return (
     <div
-      className={cn("mx-auto w-full max-w-360 px-4 md:px-20", className)}
+      className={cn(
+        "mx-auto w-full max-w-360 px-[clamp(1rem,-0.49rem+6.1vw,5rem)]",
+        className,
+      )}
       {...props}
     />
   );

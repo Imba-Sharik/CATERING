@@ -42,10 +42,8 @@ function StepProgress({ step }: { step: number }) {
 export function StepCard({ number, title, step, hasConnector }: StepCardProps) {
   return (
     <article className="relative flex h-[215px] w-full shrink-0 flex-col items-center rounded-md border border-foreground bg-card px-4 py-4 backdrop-blur-sm md:h-[420px] md:w-[255px] md:px-[25px] md:py-[50px]">
-      <span className="text-3xl leading-[85px] md:text-4xl md:leading-[143px]">
-        {number}
-      </span>
-      <span className="my-auto text-center text-[14px] md:text-lg">{title}</span>
+      <span className="text-stat">{number}</span>
+      <span className="my-auto text-center text-h4">{title}</span>
       <StepProgress step={step} />
 
       {hasConnector && (

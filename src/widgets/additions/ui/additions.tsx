@@ -48,11 +48,11 @@ const ITEMS = [
 
 export function Additions() {
   return (
-    <section className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24">
+    <section className="flex min-h-screen flex-col justify-center bg-background py-section">
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-8 md:gap-12">
           <SectionLabel number="04" name="ДОПОЛНЕНИЯ К ГАСТРОНОМИИ" />
-          <h2 className="max-w-[649px] text-xl md:text-2xl">
+          <h2 className="max-w-[649px] text-h2">
             Впечатления через гастрономию и сервис
           </h2>
         </div>
@@ -72,8 +72,8 @@ export function Additions() {
                     className={`shrink-0 ${item.iconClass}`}
                   />
                   <div className="flex items-center gap-3 md:contents">
-                    <span className="text-lg md:text-xl">{item.number}</span>
-                    <span className="text-lg md:text-xl">{item.title}</span>
+                    <span className="text-h3">{item.number}</span>
+                    <span className="text-h3">{item.title}</span>
                   </div>
                 </div>
                 <p className="max-w-[170px] text-xs font-normal md:max-w-none md:text-sm">

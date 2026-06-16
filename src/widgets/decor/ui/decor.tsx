@@ -22,17 +22,17 @@ const CARDS = [
 
 export function Decor() {
   return (
-    <section className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24">
+    <section className="flex min-h-screen flex-col justify-center bg-background py-section">
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-8 md:gap-12">
           <SectionLabel number="06" name="АНТУРАЖ" />
-          <h2 className="text-xl md:text-2xl">
+          <h2 className="text-h2">
             Интерьер / Декор /
             <br className="hidden md:inline" /> Посуда / Текстиль
           </h2>
         </div>
 
-        <div className="flex flex-col gap-4 md:grid md:grid-cols-3">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
           {CARDS.map((card) => (
             <article
               key={card.title}
@@ -42,13 +42,13 @@ export function Decor() {
                 src={card.image}
                 alt={card.title}
                 fill
-                sizes="(max-width: 768px) 100vw, 420px"
+                sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 420px"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-black/40" />
 
               <div className="relative flex w-full flex-col gap-2 md:w-[320px] md:gap-4">
-                <h3 className="text-lg md:text-xl">{card.title}</h3>
+                <h3 className="text-h3">{card.title}</h3>
                 <p className="text-xs font-normal md:max-w-[282px] md:text-sm">
                   {card.subtitle}
                 </p>

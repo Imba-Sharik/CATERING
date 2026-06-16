@@ -12,16 +12,16 @@ const TAGS = [
 
 export function Positioning() {
   return (
-    <section className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24">
+    <section className="flex min-h-screen flex-col justify-center bg-background py-section">
       <Container className="flex flex-col gap-8 md:gap-12">
         <SectionLabel number="02" name="ПОЗИЦИОНИРОВАНИЕ" />
 
-        <h2 className="text-xl md:max-w-[990px] md:text-2xl">
+        <h2 className="text-h2 md:max-w-[990px]">
           Как режиссёр выстраивает сцену — мы выстраиваем гастрономическую
           историю вашего вечера
         </h2>
 
-        <div className="relative h-[269px] w-full overflow-hidden rounded-sm md:h-[463px]">
+        <div className="relative aspect-[358/269] w-full overflow-hidden rounded-sm md:aspect-[1280/463]">
           <Image
             src="/images/positioning/positioning.jpg"
             alt="Кейтеринг на открытой площадке у воды"

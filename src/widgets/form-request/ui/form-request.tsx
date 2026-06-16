@@ -25,14 +25,14 @@ export function FormRequest() {
   return (
     <section
       id="form"
-      className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24"
+      className="flex min-h-screen flex-col justify-center bg-background py-section"
     >
       <Container className="flex flex-col items-start gap-8 md:gap-20">
         <SectionLabel number="09" name="ФОРМА ЗАЯВКИ" />
 
         <form className="mx-auto flex w-full max-w-[993px] flex-col items-center gap-8 md:gap-12">
           <div className="flex w-full flex-col items-center gap-6 md:gap-8">
-            <p className="text-center text-sm font-normal md:text-base">
+            <p className="text-center text-body font-normal">
               Расскажите нам о вашем событии
             </p>
 
@@ -45,7 +45,7 @@ export function FormRequest() {
                 unoptimized
                 className="hidden h-[75px] w-[154px] shrink-0 lg:block"
               />
-              <h2 className="max-w-[266px] text-center text-xl md:max-w-[685px] md:text-2xl">
+              <h2 className="max-w-[266px] text-center text-h2 md:max-w-[685px]">
                 Получите расчёт стоимости{" "}
                 <span className="hidden md:inline">кейтеринга </span>в течение
                 рабочего дня

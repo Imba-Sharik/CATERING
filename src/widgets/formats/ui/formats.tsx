@@ -46,14 +46,14 @@ function FormatCard({ card }: { card: FormatCard }) {
         src={card.image}
         alt={card.title}
         fill
-        sizes="(max-width: 768px) 100vw, 320px"
+        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 320px"
         className="object-cover"
       />
       {!card.bakedOverlay && <div className="absolute inset-0 bg-black/50" />}
 
       <div className="relative flex h-full flex-col justify-between">
         <div className="flex w-full flex-col gap-2 md:w-[186px] md:gap-4">
-          <h3 className="text-lg md:text-xl">{card.title}</h3>
+          <h3 className="text-h3">{card.title}</h3>
           <p className="text-xs font-normal md:text-sm">{card.subtitle}</p>
         </div>
         <span className="inline-flex w-fit items-center rounded-lg border border-foreground px-4 py-2 text-xs whitespace-nowrap">
@@ -68,15 +68,15 @@ export function Formats() {
   return (
     <section
       id="formats"
-      className="flex min-h-screen flex-col justify-center bg-background py-14 md:py-24"
+      className="flex min-h-screen flex-col justify-center bg-background py-section"
     >
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-8 md:gap-12">
           <SectionLabel number="03" name="ФОРМАТЫ МЕРОПРИЯТИЙ" />
-          <h2 className="text-xl md:text-2xl">Форматы мероприятий</h2>
+          <h2 className="text-h2">Форматы мероприятий</h2>
         </div>
 
-        <div className="flex flex-col gap-4 md:grid md:grid-cols-4">
+        <div className="flex flex-col gap-4 md:grid md:grid-cols-2 xl:grid-cols-4">
           {CARDS.map((card) => (
             <FormatCard key={card.chip} card={card} />
           ))}

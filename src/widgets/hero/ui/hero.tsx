@@ -37,8 +37,8 @@ export function Hero() {
           />
 
           <div className="flex w-full flex-col items-center gap-4 text-center md:gap-8">
-            <h1 className="text-2xl md:text-3xl">Кейтеринг в Москве</h1>
-            <p className="text-sm md:text-lg">
+            <h1 className="text-display">Кейтеринг в Москве</h1>
+            <p className="text-lead">
               Гастрономический сценарий для событий любого масштаба
             </p>
             <div className="flex flex-col items-center gap-1 text-xs font-normal text-muted-foreground md:text-sm">

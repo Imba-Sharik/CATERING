@@ -17,7 +17,7 @@ export function Approach() {
   return (
     <section
       id="approach"
-      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-14 md:py-24"
+      className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-section"
     >
       <Image
         src="/images/approach/approach-bg.jpg"
@@ -43,10 +43,10 @@ export function Approach() {
               className="flex md:hidden"
             />
             <div className="flex flex-col gap-6 md:gap-8">
-              <h2 className="text-xl md:max-w-[1047px] md:text-2xl">
+              <h2 className="text-h2 md:max-w-[1047px]">
                 Как мы работаем
               </h2>
-              <p className="max-w-[266px] text-sm font-normal md:max-w-[368px] md:text-base">
+              <p className="max-w-[266px] text-body font-normal md:max-w-[368px]">
                 Даже если до события две недели — соберём сильный результат без
                 потери качества
               </p>
