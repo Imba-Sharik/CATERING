@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Force d:\\\\CATERING | Select-Object Name; \"---git---\"; \\(Get-Command git\\).Source; git --version; \"---node---\"; node --version; npm --version; \\(Get-Command pnpm -ErrorAction SilentlyContinue\\).Source)",
+      "Read(//d//**)",
+      "PowerShell(git -C d:\\\\CATERING init -b main)",
+      "PowerShell(git -C d:\\\\CATERING remote add origin https://github.com/Imba-Sharik/CATERING.git)",
+      "PowerShell(git -C d:\\\\CATERING remote -v)",
+      "PowerShell(pnpm --version; \"node: $\\(node --version\\)\"; \"--- contents of CATERING ---\"; Get-ChildItem -Force d:\\\\CATERING | Select-Object Name)",
+      "PowerShell(cd d:\\\\CATERING; Get-ChildItem -Force d:\\\\CATERING\\\\scaffold-tmp | ForEach-Object { Move-Item -LiteralPath $_.FullName -Destination d:\\\\CATERING -Force }; Remove-Item d:\\\\CATERING\\\\scaffold-tmp -Recurse -Force; \"--- result ---\"; Get-ChildItem -Force d:\\\\CATERING | Select-Object Name)",
+      "PowerShell(cd d:\\\\CATERING; $env:CI = \"true\"; pnpm install 2>&1 | Select-Object -Last 15)",
+      "PowerShell(cd d:\\\\CATERING; $env:CI = \"true\"; pnpm dlx shadcn@latest add button --yes 2>&1 | Select-Object -Last 25)",
+      "PowerShell(cd d:\\\\CATERING; $env:CI = \"true\"; pnpm add -D tw-animate-css 2>&1 | Select-Object -Last 8)",
+      "PowerShell(cd d:\\\\CATERING; $env:CI = \"true\"; pnpm build 2>&1 | Select-Object -Last 35)",
+      "PowerShell(cd d:\\\\CATERING; $env:CI = \"true\"; pnpm build 2>&1 | Select-Object -Last 25)",
+      "PowerShell(cd d:\\\\CATERING; $env:CI = \"true\"; pnpm add clsx tailwind-merge class-variance-authority lucide-react 2>&1 | Select-Object -Last 12)",
+      "PowerShell(cd d:\\\\CATERING; \"user.name: $\\(git config user.name\\)\"; \"user.email: $\\(git config user.email\\)\"; git add -A; git status --short | Select-Object -First 30)"
+    ],
+    "additionalDirectories": [
+      "D:\\CATERING-tmp\\.git"
+    ]
+  }
+}
