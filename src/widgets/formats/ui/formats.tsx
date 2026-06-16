@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
+import { Reveal } from "@/shared/ui/reveal";
 
 type FormatCard = {
   image: string;
@@ -72,13 +73,19 @@ export function Formats() {
     >
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-8 md:gap-12">
-          <SectionLabel number="03" name="ФОРМАТЫ МЕРОПРИЯТИЙ" />
-          <h2 className="text-h2">Форматы мероприятий</h2>
+          <Reveal>
+            <SectionLabel number="03" name="ФОРМАТЫ МЕРОПРИЯТИЙ" />
+          </Reveal>
+          <Reveal as="h2" className="text-h2" delay={100}>
+            Форматы мероприятий
+          </Reveal>
         </div>
 
         <div className="flex flex-col gap-4 md:grid md:grid-cols-2 xl:grid-cols-4">
-          {CARDS.map((card) => (
-            <FormatCard key={card.chip} card={card} />
+          {CARDS.map((card, i) => (
+            <Reveal key={card.chip} delay={i * 90}>
+              <FormatCard card={card} />
+            </Reveal>
           ))}
         </div>
       </Container>

@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
+import { Reveal } from "@/shared/ui/reveal";
 import { StepCard } from "./step-card";
 
 const STEPS = [
@@ -43,13 +44,17 @@ export function Approach() {
               className="flex md:hidden"
             />
             <div className="flex flex-col gap-6 md:gap-8">
-              <h2 className="text-h2 md:max-w-[1047px]">
+              <Reveal as="h2" className="text-h2 md:max-w-[1047px]">
                 Как мы работаем
-              </h2>
-              <p className="max-w-[266px] text-body font-normal md:max-w-[368px]">
+              </Reveal>
+              <Reveal
+                as="p"
+                delay={120}
+                className="max-w-[266px] text-body font-normal md:max-w-[368px]"
+              >
                 Даже если до события две недели — соберём сильный результат без
                 потери качества
-              </p>
+              </Reveal>
             </div>
           </div>
         </Container>
@@ -57,13 +62,14 @@ export function Approach() {
         {/* Мобайл: сетка 2 кол (в контейнере); десктоп: full-bleed карусель */}
         <div className="no-scrollbar grid grid-cols-2 gap-4 px-4 md:flex md:gap-[160px] md:overflow-x-auto md:px-0 md:pr-[max(5rem,calc((100%-1440px)/2+5rem))] md:pl-[max(5rem,calc((100%-1440px)/2+5rem))]">
           {STEPS.map((step, i) => (
-            <StepCard
-              key={step.number}
-              number={step.number}
-              title={step.title}
-              step={i + 1}
-              hasConnector={i < STEPS.length - 1}
-            />
+            <Reveal key={step.number} delay={i * 90} className="shrink-0">
+              <StepCard
+                number={step.number}
+                title={step.title}
+                step={i + 1}
+                hasConnector={i < STEPS.length - 1}
+              />
+            </Reveal>
           ))}
         </div>
       </div>

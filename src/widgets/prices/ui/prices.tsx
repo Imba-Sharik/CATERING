@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Button } from "@/shared/ui/button";
+import { Reveal } from "@/shared/ui/reveal";
 
 const CARDS = [
   { image: "/images/prices/price-1.jpg", title: "Завтрак", price: "от 1 500 ₽" },
@@ -45,31 +46,43 @@ export function Prices() {
       className="flex min-h-screen flex-col justify-center bg-background py-section"
     >
       <Container className="flex flex-col gap-8 md:gap-12">
-        <SectionLabel number="07" name="ЦЕНЫ" />
+        <Reveal>
+          <SectionLabel number="07" name="ЦЕНЫ" />
+        </Reveal>
 
         <div className="flex flex-col items-start gap-8 md:flex-row md:items-center md:justify-between">
-          <h2 className="text-h2">Стоимость кейтеринга в Москве</h2>
-          <p className="h-[64px] w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-xs font-normal text-muted-foreground md:h-auto md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm">
+          <Reveal as="h2" className="text-h2">
+            Стоимость кейтеринга в Москве
+          </Reveal>
+          <Reveal
+            as="p"
+            delay={120}
+            className="h-[64px] w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-xs font-normal text-muted-foreground md:h-auto md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm"
+          >
             Сервис: +20% от стоимости меню
             <br className="hidden md:inline" />
             <br className="hidden md:inline" /> Дегустация при подтверждении
             сотрудничества — бесплатно
-          </p>
+          </Reveal>
         </div>
 
         <div className="flex flex-col gap-4 md:gap-8">
           <div className="flex flex-col gap-4 md:grid md:grid-cols-2 lg:grid-cols-3">
-            {CARDS.map((card) => (
-              <PriceCard key={card.title} card={card} />
+            {CARDS.map((card, i) => (
+              <Reveal key={card.title} delay={i * 80} className="grid">
+                <PriceCard card={card} />
+              </Reveal>
             ))}
           </div>
 
-          <Button
-            variant="outline"
-            className="h-[25px] w-fit rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
-          >
-            Отправить заявку
-          </Button>
+          <Reveal>
+            <Button
+              variant="outline"
+              className="h-[25px] w-fit rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
+            >
+              Отправить заявку
+            </Button>
+          </Reveal>
         </div>
       </Container>
     </section>

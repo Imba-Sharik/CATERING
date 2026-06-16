@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Divider } from "@/shared/ui/divider";
+import { Reveal } from "@/shared/ui/reveal";
 
 const ITEMS = [
   { number: "01", title: "Коммуникация" },
@@ -25,18 +26,22 @@ export function Service() {
       />
 
       <Container className="relative flex flex-col gap-8 md:gap-12">
-        <SectionLabel number="05" name="СЕРВИС" />
+        <Reveal>
+          <SectionLabel number="05" name="СЕРВИС" />
+        </Reveal>
 
         <div className="flex flex-col gap-8 md:flex-row md:items-end md:gap-x-[clamp(4rem,14vw,12.5rem)] md:gap-y-12">
           <div className="flex flex-col gap-6 md:min-h-[689px] md:gap-8">
-            <h2 className="text-h2">Сервис как система</h2>
-            <p className="text-body font-normal">
+            <Reveal as="h2" className="text-h2">
+              Сервис как система
+            </Reveal>
+            <Reveal as="p" delay={120} className="text-body font-normal">
               Собственная Академия Сервиса.
               <br className="hidden md:inline" /> Все сотрудники проходят
               внутреннюю
               <br className="hidden md:inline" /> подготовку по единым стандартам
               LOFT HALL.
-            </p>
+            </Reveal>
           </div>
 
           {/* Мобайл: контейнерное фото */}
@@ -52,13 +57,17 @@ export function Service() {
 
           <div className="flex w-full flex-col gap-8 md:max-w-[632px]">
             {ITEMS.map((item, i) => (
-              <div key={item.number} className="flex flex-col gap-8">
+              <Reveal
+                key={item.number}
+                delay={i * 80}
+                className="flex flex-col gap-8"
+              >
                 {i > 0 && <Divider className="hidden md:block" />}
                 <div className="flex items-center gap-3 md:gap-24">
                   <span className="text-h3">{item.number}</span>
                   <span className="text-h3">{item.title}</span>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

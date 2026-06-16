@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/shared/ui/button";
+import { Reveal } from "@/shared/ui/reveal";
 
 export function Hero() {
   return (
@@ -34,18 +35,27 @@ export function Hero() {
           />
 
           <div className="flex w-full flex-col items-center gap-4 text-center md:gap-8">
-            <h1 className="text-display">Кейтеринг в Москве</h1>
-            <p className="text-lead">
+            <Reveal as="h1" className="text-display" delay={120}>
+              Кейтеринг в Москве
+            </Reveal>
+            <Reveal as="p" className="text-lead" delay={240}>
               Гастрономический сценарий для событий любого масштаба
-            </p>
-            <div className="flex flex-col items-center gap-1 text-xs font-normal text-muted-foreground md:text-sm">
+            </Reveal>
+            <Reveal
+              as="div"
+              delay={360}
+              className="flex flex-col items-center gap-1 text-xs font-normal text-muted-foreground md:text-sm"
+            >
               <span>Московская область</span>
               <span>Москва</span>
-            </div>
+            </Reveal>
           </div>
         </div>
 
-        <div className="flex w-[116px] flex-col items-center gap-3 md:w-[192px]">
+        <Reveal
+          delay={480}
+          className="flex w-[116px] flex-col items-center gap-3 md:w-[192px]"
+        >
           <Button
             variant="outline"
             className="h-[30px] w-full text-[8px] md:h-[38px] md:text-sm"
@@ -58,7 +68,7 @@ export function Hero() {
           >
             Смотреть форматы
           </Button>
-        </div>
+        </Reveal>
       </div>
     </section>
   );

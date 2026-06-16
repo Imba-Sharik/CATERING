@@ -158,3 +158,39 @@
 @utility py-section {
   padding-block: clamp(3.5rem, 2.57rem + 3.81vw, 6rem);
 }
+
+/*
+  Scroll-reveal: текст/блок всплывает с blur→sharp при входе во вьюпорт.
+  Состояние переключает data-show (см. <Reveal> + useInView). Анимируем только
+  opacity/transform/filter — работает на GPU-композиторе, без перерасчёта layout.
+  Тонкая настройка на каждый элемент — через CSS-переменные (--reveal-*).
+*/
+@layer components {
+  .reveal {
+    opacity: 0;
+    transform: translateY(var(--reveal-y, 1.5rem));
+    filter: blur(var(--reveal-blur, 0.5rem));
+    transition:
+      opacity var(--reveal-duration, 0.7s) var(--reveal-ease, cubic-bezier(0.22, 1, 0.36, 1))
+        var(--reveal-delay, 0s),
+      transform var(--reveal-duration, 0.7s) var(--reveal-ease, cubic-bezier(0.22, 1, 0.36, 1))
+        var(--reveal-delay, 0s),
+      filter var(--reveal-duration, 0.7s) var(--reveal-ease, cubic-bezier(0.22, 1, 0.36, 1))
+        var(--reveal-delay, 0s);
+    will-change: opacity, transform;
+  }
+  .reveal[data-show="true"] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  /* Уважаем системную настройку «уменьшить движение» — показываем сразу */
+  @media (prefers-reduced-motion: reduce) {
+    .reveal {
+      opacity: 1;
+      transform: none;
+      filter: none;
+      transition: none;
+    }
+  }
+}

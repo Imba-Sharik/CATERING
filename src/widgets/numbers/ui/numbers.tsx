@@ -3,6 +3,7 @@ import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Stat } from "@/shared/ui/stat";
 import { Divider } from "@/shared/ui/divider";
+import { Reveal } from "@/shared/ui/reveal";
 
 const STATS = [
   { value: "11 лет", caption: "На событийном рынке" },
@@ -25,24 +26,26 @@ export function Numbers() {
 
       <Container className="relative">
         <div className="flex flex-col gap-8 xl:grid xl:grid-cols-2 xl:gap-x-[clamp(4rem,8vw,12.5rem)] xl:gap-y-12">
-          <SectionLabel
-            number="01"
-            name="ДОВЕРИЕ · ЦИФРЫ"
-            className="xl:col-start-1 xl:row-start-1"
-          />
+          <Reveal className="xl:col-start-1 xl:row-start-1">
+            <SectionLabel number="01" name="ДОВЕРИЕ · ЦИФРЫ" />
+          </Reveal>
 
           <div className="flex flex-col gap-6 xl:col-start-1 xl:row-start-2 xl:gap-8">
-            <h2 className="text-h2">
+            <Reveal as="h2" className="text-h2" delay={100}>
               Мы понимаем
               <br className="hidden xl:inline" /> не только гастрономию,
               <br className="hidden xl:inline" /> но и механику события.
-            </h2>
-            <p className="max-w-[281px] text-body font-normal xl:max-w-none">
+            </Reveal>
+            <Reveal
+              as="p"
+              delay={220}
+              className="max-w-[281px] text-body font-normal xl:max-w-none"
+            >
               Тайминг, логистику, движение гостей,
               <br className="hidden xl:inline" /> ритм вечера – это то, с чем мы
               работаем
               <br className="hidden xl:inline" /> уже больше 10 лет.
-            </p>
+            </Reveal>
           </div>
 
           {/* Мобайл: контейнерное фото */}
@@ -58,10 +61,14 @@ export function Numbers() {
 
           <div className="flex flex-col gap-8 xl:col-start-2 xl:row-start-2 xl:py-2">
             {STATS.map((stat, i) => (
-              <div key={stat.value} className="flex flex-col gap-8">
+              <Reveal
+                key={stat.value}
+                delay={300 + i * 120}
+                className="flex flex-col gap-8"
+              >
                 {i > 0 && <Divider />}
                 <Stat value={stat.value} caption={stat.caption} />
-              </div>
+              </Reveal>
             ))}
           </div>
         </div>

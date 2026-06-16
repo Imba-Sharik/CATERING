@@ -4,6 +4,7 @@ import { SectionLabel } from "@/shared/ui/section-label";
 import { Button } from "@/shared/ui/button";
 import { Field } from "@/shared/ui/field";
 import { Chip } from "@/shared/ui/chip";
+import { Reveal } from "@/shared/ui/reveal";
 
 const FIELDS = [
   "Имя",
@@ -28,15 +29,17 @@ export function FormRequest() {
       className="flex min-h-screen flex-col justify-center bg-background py-section"
     >
       <Container className="flex flex-col items-start gap-8 md:gap-20">
-        <SectionLabel number="09" name="ФОРМА ЗАЯВКИ" />
+        <Reveal>
+          <SectionLabel number="09" name="ФОРМА ЗАЯВКИ" />
+        </Reveal>
 
         <form className="mx-auto flex w-full max-w-[993px] flex-col items-center gap-8 md:gap-12">
           <div className="flex w-full flex-col items-center gap-6 md:gap-8">
-            <p className="text-center text-body font-normal">
+            <Reveal as="p" className="text-center text-body font-normal">
               Расскажите нам о вашем событии
-            </p>
+            </Reveal>
 
-            <div className="flex items-center justify-center gap-8">
+            <Reveal delay={100} className="flex items-center justify-center gap-8">
               <Image
                 src="/images/form/deco-left.svg"
                 alt=""
@@ -58,19 +61,23 @@ export function FormRequest() {
                 unoptimized
                 className="hidden h-[75px] w-[154px] shrink-0 lg:block"
               />
-            </div>
+            </Reveal>
 
-            <div className="flex flex-col items-center gap-2 text-center text-xs">
+            <Reveal
+              as="div"
+              delay={200}
+              className="flex flex-col items-center gap-2 text-center text-xs"
+            >
               <p className="max-w-[193px]">
                 Дегустация при подтверждении — бесплатно. Работаем в Москве,
                 Московской области
               </p>
               <p>info@lofthall.ru</p>
-            </div>
+            </Reveal>
           </div>
 
           {/* Мобайл: поля в столбик, «Формат» + чипы между ними */}
-          <div className="flex w-full flex-col gap-8 md:hidden">
+          <Reveal as="div" className="flex w-full flex-col gap-8 md:hidden">
             <Field label="Имя" />
             <Field label="Телефон" />
             <Field label="Дата события" />
@@ -91,10 +98,13 @@ export function FormRequest() {
             </div>
 
             <Field label="Комментарий" />
-          </div>
+          </Reveal>
 
           {/* Десктоп: сетка полей 3×2 + чипы */}
-          <div className="hidden w-full max-w-[608px] flex-col items-center gap-6 md:flex">
+          <Reveal
+            as="div"
+            className="hidden w-full max-w-[608px] flex-col items-center gap-6 md:flex"
+          >
             <div className="grid w-full grid-cols-3 gap-x-16 gap-y-12">
               {FIELDS.map((label) => (
                 <Field key={label} label={label} />
@@ -105,15 +115,17 @@ export function FormRequest() {
                 <Chip key={option}>{option}</Chip>
               ))}
             </div>
-          </div>
+          </Reveal>
 
-          <Button
-            type="button"
-            variant="outline"
-            className="h-[25px] rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
-          >
-            Отправить заявку
-          </Button>
+          <Reveal>
+            <Button
+              type="button"
+              variant="outline"
+              className="h-[25px] rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
+            >
+              Отправить заявку
+            </Button>
+          </Reveal>
 
           <div className="flex w-full flex-col items-center gap-1 text-center text-sm text-muted-foreground">
             <p>Или позвоните нам (Москва)</p>

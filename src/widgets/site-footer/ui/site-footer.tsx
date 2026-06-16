@@ -6,12 +6,19 @@ import { cn } from "@/shared/lib/utils";
 function FooterInfo({ className }: { className?: string }) {
   return (
     <div className={cn("flex flex-col gap-5 font-normal", className)}>
-      <p>placebo25.com</p>
+      <a
+        href="https://placebo25.com/"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="underline-offset-4 hover:underline"
+      >
+        placebo25.com
+      </a>
       <p>ул. Ленинская Слобода, 26с 15, Москва</p>
       <div className="flex flex-col gap-3">
         <span>© 2026</span>
         <span>LOFT HALL</span>
-        <Link href="#" className="underline-offset-4 hover:underline">
+        <Link href="/privacy" className="underline-offset-4 hover:underline">
           Политика конфиденциальности
         </Link>
       </div>

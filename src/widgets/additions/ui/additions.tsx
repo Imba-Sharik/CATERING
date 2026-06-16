@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Divider } from "@/shared/ui/divider";
+import { Reveal } from "@/shared/ui/reveal";
 
 const ITEMS = [
   {
@@ -51,16 +52,22 @@ export function Additions() {
     <section className="flex min-h-screen flex-col justify-center bg-background py-section">
       <Container className="flex flex-col gap-12">
         <div className="flex flex-col gap-8 md:gap-12">
-          <SectionLabel number="04" name="ДОПОЛНЕНИЯ К ГАСТРОНОМИИ" />
-          <h2 className="max-w-[649px] text-h2">
+          <Reveal>
+            <SectionLabel number="04" name="ДОПОЛНЕНИЯ К ГАСТРОНОМИИ" />
+          </Reveal>
+          <Reveal as="h2" className="max-w-[649px] text-h2" delay={100}>
             Впечатления через гастрономию и сервис
-          </h2>
+          </Reveal>
         </div>
 
         <div className="flex flex-col gap-4 md:gap-12">
           <Divider />
-          {ITEMS.map((item) => (
-            <div key={item.number} className="flex flex-col gap-4 md:gap-12">
+          {ITEMS.map((item, i) => (
+            <Reveal
+              key={item.number}
+              delay={i * 80}
+              className="flex flex-col gap-4 md:gap-12"
+            >
               <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
                 <div className="flex flex-col gap-4 md:flex-row md:items-center md:gap-12">
                   {/* Фикс-слот под иконку (по самой широкой), чтобы номера и
@@ -86,7 +93,7 @@ export function Additions() {
                 </p>
               </div>
               <Divider />
-            </div>
+            </Reveal>
           ))}
         </div>
       </Container>
