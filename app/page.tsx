@@ -1,3 +1,4 @@
+import { SiteHeader } from "@/widgets/site-header";
 import { Hero } from "@/widgets/hero";
 import { Numbers } from "@/widgets/numbers";
 import { Positioning } from "@/widgets/positioning";
@@ -13,6 +14,7 @@ import { SiteFooter } from "@/widgets/site-footer";
 export default function Page() {
   return (
     <main className="flex flex-col">
+      <SiteHeader />
       <Hero />
       <Numbers />
       <Positioning />

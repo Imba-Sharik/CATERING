@@ -5,24 +5,28 @@ import { MobileMenu } from "./mobile-menu";
 
 export function SiteHeader() {
   return (
-    <header className="relative z-20 flex w-full items-center bg-background px-6 py-2.5 md:px-16 md:py-2">
-      <div className="flex flex-1 items-center justify-between">
-        <Link href="#" className="flex items-center gap-[22px] md:gap-16">
+    <header className="sticky top-0 z-40 flex w-full items-center bg-background px-6 py-2.5 lg:py-2 lg:px-[clamp(1.5rem,9.62vw_-_4.66rem,4rem)]">
+      <div className="flex flex-1 items-center justify-between gap-4">
+        <Link
+          href="#hero"
+          className="flex items-center gap-[22px] lg:gap-[clamp(1.5rem,9.62vw_-_4.66rem,4rem)]"
+        >
           <Image
             src="/images/hero/logomark.svg"
             alt="Catering by Loft Hall"
             width={41}
             height={26}
             unoptimized
-            className="h-[20px] w-[27px] md:h-[26px] md:w-[41px]"
+            className="h-[20px] w-[27px] lg:h-[26px] lg:w-[41px]"
           />
-          <span className="text-xs whitespace-nowrap md:text-sm">
+          <span className="text-xs whitespace-nowrap lg:text-sm">
             Catering by Loft Hall
           </span>
         </Link>
 
-        {/* Десктоп: навигация */}
-        <nav className="hidden items-center gap-16 md:flex">
+        {/* Десктоп: нав с lg. Гэп текучий: к 1024 ужимается (помещается),
+            на 1440 = 64px (Figma), выше 1440 растёт пропорционально (4.44vw) */}
+        <nav className="hidden items-center gap-[clamp(1rem,11.54vw_-_6.39rem,4.44vw)] lg:flex">
           {NAV_ITEMS.map((item) => (
             <Link
               key={item.href}

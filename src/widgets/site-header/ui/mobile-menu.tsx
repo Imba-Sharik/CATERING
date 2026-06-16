@@ -35,7 +35,7 @@ export function MobileMenu() {
         aria-label="Открыть меню"
         aria-expanded={open}
         onClick={() => setOpen(true)}
-        className="flex size-6 items-center justify-center text-foreground md:hidden"
+        className="flex size-6 items-center justify-center text-foreground lg:hidden"
       >
         <Menu className="size-6" strokeWidth={1.5} />
       </button>
@@ -46,7 +46,7 @@ export function MobileMenu() {
           role="dialog"
           aria-modal="true"
           aria-label="Меню"
-          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background md:hidden"
+          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background lg:hidden"
         >
           {/* Хедер оверлея — лого + крестик */}
           <div className="flex w-full items-center justify-between px-6 py-2.5">

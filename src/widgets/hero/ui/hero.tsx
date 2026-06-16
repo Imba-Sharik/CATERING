@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Button } from "@/shared/ui/button";
-import { SiteHeader } from "@/widgets/site-header";
 
 export function Hero() {
   return (
@@ -21,8 +20,6 @@ export function Hero() {
         />
         <div className="absolute inset-0 bg-black/70" />
       </div>
-
-      <SiteHeader />
 
       <div className="relative flex w-full max-w-[358px] flex-1 flex-col items-center justify-center gap-30 px-4 py-12 md:w-[387px] md:max-w-none md:gap-12 md:px-0">
         <div className="flex w-full flex-col items-center gap-16">
