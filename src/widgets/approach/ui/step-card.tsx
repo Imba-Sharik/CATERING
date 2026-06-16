@@ -10,24 +10,31 @@ type StepCardProps = {
   hasConnector?: boolean;
 };
 
+// Прогресс из 7 слотов на всю ширину карточки: первые `step` залиты, остальные
+// прозрачны. Сегменты резиновые (flex-1) — не вылезают на любой ширине.
 function StepProgress({ step }: { step: number }) {
   return (
-    <div className="flex gap-px self-start">
-      {Array.from({ length: step }).map((_, i) => (
-        <span
-          key={i}
-          className={cn(
-            "h-3 w-5 bg-foreground md:h-[21px] md:w-7",
-            step === 1
-              ? "rounded-full"
-              : i === 0
-                ? "rounded-l-full"
-                : i === step - 1
-                  ? "rounded-r-full"
-                  : "rounded-none",
-          )}
-        />
-      ))}
+    <div className="flex w-full gap-px">
+      {Array.from({ length: 7 }).map((_, i) => {
+        const filled = i < step;
+        return (
+          <span
+            key={i}
+            className={cn(
+              "h-3 flex-1 md:h-[21px]",
+              filled ? "bg-foreground" : "bg-transparent",
+              filled &&
+                (step === 1
+                  ? "rounded-full"
+                  : i === 0
+                    ? "rounded-l-full"
+                    : i === step - 1
+                      ? "rounded-r-full"
+                      : "rounded-none"),
+            )}
+          />
+        );
+      })}
     </div>
   );
 }
