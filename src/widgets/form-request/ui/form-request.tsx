@@ -1,3 +1,6 @@
+"use client";
+
+import * as React from "react";
 import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
@@ -5,6 +8,8 @@ import { Button } from "@/shared/ui/button";
 import { Field } from "@/shared/ui/field";
 import { Chip } from "@/shared/ui/chip";
 import { Reveal } from "@/shared/ui/reveal";
+import { cn } from "@/shared/lib/utils";
+import { FORMAT_EVENT } from "@/shared/lib/format-request";
 
 const FIELDS = [
   "Имя",
@@ -23,6 +28,16 @@ const OPTIONS = [
 ];
 
 export function FormRequest() {
+  const [format, setFormat] = React.useState("");
+
+  React.useEffect(() => {
+    function onSelect(e: Event) {
+      setFormat((e as CustomEvent<string>).detail);
+    }
+    window.addEventListener(FORMAT_EVENT, onSelect);
+    return () => window.removeEventListener(FORMAT_EVENT, onSelect);
+  }, []);
+
   return (
     <section
       id="form"
@@ -90,7 +105,14 @@ export function FormRequest() {
               </div>
               <div className="grid w-fit grid-cols-2 gap-2">
                 {OPTIONS.map((option) => (
-                  <Chip key={option} className="w-full">
+                  <Chip
+                    key={option}
+                    aria-pressed={format === option}
+                    onClick={() =>
+                      setFormat((prev) => (prev === option ? "" : option))
+                    }
+                    className={cn("w-full", format === option && "bg-foreground/15")}
+                  >
                     {option}
                   </Chip>
                 ))}
@@ -106,13 +128,31 @@ export function FormRequest() {
             className="hidden w-full max-w-[608px] flex-col items-center gap-6 md:flex"
           >
             <div className="grid w-full grid-cols-3 gap-x-16 gap-y-12">
-              {FIELDS.map((label) => (
-                <Field key={label} label={label} />
-              ))}
+              {FIELDS.map((label) =>
+                label === "Формат" ? (
+                  <Field
+                    key={label}
+                    label={label}
+                    value={format}
+                    onChange={(e) => setFormat(e.target.value)}
+                  />
+                ) : (
+                  <Field key={label} label={label} />
+                ),
+              )}
             </div>
             <div className="flex flex-wrap justify-center gap-3">
               {OPTIONS.map((option) => (
-                <Chip key={option}>{option}</Chip>
+                <Chip
+                  key={option}
+                  aria-pressed={format === option}
+                  onClick={() =>
+                    setFormat((prev) => (prev === option ? "" : option))
+                  }
+                  className={cn(format === option && "bg-foreground/15")}
+                >
+                  {option}
+                </Chip>
               ))}
             </div>
           </Reveal>

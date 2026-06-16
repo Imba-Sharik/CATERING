@@ -2,6 +2,7 @@ import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Reveal } from "@/shared/ui/reveal";
+import { DragScroll } from "@/shared/ui/drag-scroll";
 import { StepCard } from "./step-card";
 
 const STEPS = [
@@ -60,7 +61,7 @@ export function Approach() {
         </Container>
 
         {/* Мобайл: сетка 2 кол (в контейнере); десктоп: full-bleed карусель */}
-        <div className="no-scrollbar grid grid-cols-2 gap-4 px-4 md:flex md:gap-[160px] md:overflow-x-auto md:px-0 md:pr-[max(5rem,calc((100%-1440px)/2+5rem))] md:pl-[max(5rem,calc((100%-1440px)/2+5rem))]">
+        <DragScroll className="no-scrollbar grid grid-cols-2 gap-4 px-4 md:flex md:gap-[160px] md:overflow-x-auto md:px-0 md:pr-[max(5rem,calc((100%-1440px)/2+5rem))] md:pl-[max(5rem,calc((100%-1440px)/2+5rem))]">
           {STEPS.map((step, i) => (
             <Reveal key={step.number} delay={i * 90} className="shrink-0">
               <StepCard
@@ -71,7 +72,7 @@ export function Approach() {
               />
             </Reveal>
           ))}
-        </div>
+        </DragScroll>
       </div>
     </section>
   );

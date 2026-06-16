@@ -77,10 +77,11 @@ export function Prices() {
 
           <Reveal>
             <Button
+              asChild
               variant="outline"
               className="h-[25px] w-fit rounded-lg px-4 py-2 text-[8px] md:h-[38px] md:rounded-md md:px-6 md:text-sm"
             >
-              Отправить заявку
+              <a href="#form">Отправить заявку</a>
             </Button>
           </Reveal>
         </div>

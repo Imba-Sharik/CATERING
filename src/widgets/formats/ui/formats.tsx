@@ -1,13 +1,18 @@
+"use client";
+
 import Image from "next/image";
 import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Reveal } from "@/shared/ui/reveal";
+import { requestFormat } from "@/shared/lib/format-request";
 
 type FormatCard = {
   image: string;
   title: string;
   subtitle: string;
   chip: string;
+  /** Значение формата, которое подставится в форму заявки. */
+  format: string;
   /** Карточка с уже затемнённым фоном (не накладываем оверлей повторно). */
   bakedOverlay?: boolean;
 };
@@ -18,6 +23,7 @@ const CARDS: FormatCard[] = [
     title: "Завтрак. Кофе-брейк",
     subtitle: "Деловые форматы для лёгкого начала события",
     chip: "Кофе-брейк в офис",
+    format: "Кофе-брейк в офис",
     bakedOverlay: true,
   },
   {
@@ -25,18 +31,21 @@ const CARDS: FormatCard[] = [
     title: "Форум. Гала-ужин",
     subtitle: "Высокая гастрономия — каждый штрих как часть постановки",
     chip: "Выездной банкет",
+    format: "Выездной банкет",
   },
   {
     image: "/images/formats/format-3.jpg",
     title: "Банкет. Фуршет",
     subtitle: "От закрытых ужинов до крупных корпоративных мероприятий",
     chip: "Корпоративный фуршет",
+    format: "Корпоративный банкет",
   },
   {
     image: "/images/formats/format-4.jpg",
     title: "Кейтеринг на свадьбу",
     subtitle: "Формат задаёте вы — мы собираем под него сервис и атмосферу",
     chip: "Кейтеринг на свадьбу",
+    format: "Кейтеринг на свадьбу",
   },
 ];
 
@@ -57,9 +66,13 @@ function FormatCard({ card }: { card: FormatCard }) {
           <h3 className="text-h3">{card.title}</h3>
           <p className="text-xs font-normal md:text-sm">{card.subtitle}</p>
         </div>
-        <span className="inline-flex w-fit items-center rounded-lg border border-foreground px-4 py-2 text-xs whitespace-nowrap">
+        <button
+          type="button"
+          onClick={() => requestFormat(card.format)}
+          className="inline-flex w-fit items-center rounded-lg border border-foreground px-4 py-2 text-xs whitespace-nowrap transition-colors hover:bg-foreground/10"
+        >
           {card.chip}
-        </span>
+        </button>
       </div>
     </article>
   );

@@ -57,16 +57,18 @@ export function Hero() {
           className="flex w-[116px] flex-col items-center gap-3 md:w-[192px]"
         >
           <Button
+            asChild
             variant="outline"
             className="h-[30px] w-full text-[8px] md:h-[38px] md:text-sm"
           >
-            Получить предложение
+            <a href="#form">Получить предложение</a>
           </Button>
           <Button
+            asChild
             variant="outline"
             className="h-[30px] text-[8px] md:h-[38px] md:text-sm"
           >
-            Смотреть форматы
+            <a href="#formats">Смотреть форматы</a>
           </Button>
         </Reveal>
       </div>
