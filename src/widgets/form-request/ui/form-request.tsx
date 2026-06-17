@@ -47,6 +47,9 @@ const FIELD_KEYS: Record<(typeof FIELDS)[number], keyof RequestFormPayload> = {
   Комментарий: "comment",
 };
 
+// Явная заливка выбранного чипа (видно и на мобайле, где нет поля «Формат»).
+const CHIP_ACTIVE = "bg-foreground text-background hover:bg-foreground";
+
 export function FormRequest() {
   const [form, setForm] = React.useState<RequestFormPayload>(EMPTY_FORM);
   const [status, setStatus] = React.useState<"idle" | "loading" | "success" | "error">(
@@ -166,10 +169,13 @@ export function FormRequest() {
             {renderField("Количество гостей")}
 
             <div className="flex w-full flex-col items-center gap-4">
-              <div className="flex w-full flex-col items-center gap-3">
-                <div className="w-[160px] border-t border-foreground" />
-                <span className="text-sm">Формат</span>
-              </div>
+              <Field
+                label="Формат"
+                name="format"
+                value={form.format}
+                onChange={(e) => updateField("format", e.target.value)}
+                disabled={status === "loading"}
+              />
               <div className="grid w-fit grid-cols-2 gap-2">
                 {OPTIONS.map((option) => (
                   <Chip
@@ -185,7 +191,7 @@ export function FormRequest() {
                     disabled={status === "loading"}
                     className={cn(
                       "w-full",
-                      form.format === option && "bg-foreground/15",
+                      form.format === option && CHIP_ACTIVE,
                     )}
                   >
                     {option}
@@ -220,7 +226,7 @@ export function FormRequest() {
                   disabled={status === "loading"}
                   className={cn(
                     "w-full",
-                    form.format === option && "bg-foreground/15",
+                    form.format === option && CHIP_ACTIVE,
                   )}
                 >
                   {option}
