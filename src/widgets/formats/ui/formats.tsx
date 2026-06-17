@@ -8,23 +8,24 @@ import { requestFormat } from "@/shared/lib/format-request";
 
 type FormatCard = {
   image: string;
+  /** Отдельный кроп под десктопную (вертикальную) карточку — art direction.
+   *  Нужен, когда `image` горизонтальный и в высокой колонке тянулся бы по высоте. */
+  imageDesktop?: string;
   title: string;
   subtitle: string;
   chip: string;
   /** Значение формата, которое подставится в форму заявки. */
   format: string;
-  /** Карточка с уже затемнённым фоном (не накладываем оверлей повторно). */
-  bakedOverlay?: boolean;
 };
 
 const CARDS: FormatCard[] = [
   {
-    image: "/images/formats/format-1.jpg",
+    image: "/images/formats/format-1-v2.jpg",
+    imageDesktop: "/images/formats/format-1-desktop.jpg",
     title: "Завтрак. Кофе-брейк",
     subtitle: "Деловые форматы для лёгкого начала события",
     chip: "Кофе-брейк в офис",
     format: "Кофе-брейк в офис",
-    bakedOverlay: true,
   },
   {
     image: "/images/formats/format-2.jpg",
@@ -42,6 +43,7 @@ const CARDS: FormatCard[] = [
   },
   {
     image: "/images/formats/format-4.jpg",
+    imageDesktop: "/images/formats/format-4-desktop.jpg",
     title: "Кейтеринг на свадьбу",
     subtitle: "Формат задаёте вы — мы собираем под него сервис и атмосферу",
     chip: "Кейтеринг на свадьбу",
@@ -52,14 +54,33 @@ const CARDS: FormatCard[] = [
 function FormatCard({ card }: { card: FormatCard }) {
   return (
     <article className="relative h-[141px] overflow-hidden rounded-sm p-4 md:h-[640px] md:py-6 md:pr-24 md:pl-6">
-      <Image
-        src={card.image}
-        alt={card.title}
-        fill
-        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 320px"
-        className="object-cover"
-      />
-      {!card.bakedOverlay && <div className="absolute inset-0 bg-black/50" />}
+      {card.imageDesktop ? (
+        <>
+          <Image
+            src={card.image}
+            alt={card.title}
+            fill
+            sizes="100vw"
+            className="object-cover md:hidden"
+          />
+          <Image
+            src={card.imageDesktop}
+            alt={card.title}
+            fill
+            sizes="(max-width: 1280px) 50vw, 320px"
+            className="hidden object-cover md:block"
+          />
+        </>
+      ) : (
+        <Image
+          src={card.image}
+          alt={card.title}
+          fill
+          sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 320px"
+          className="object-cover"
+        />
+      )}
+      <div className="absolute inset-0 bg-black/50" />
 
       <div className="relative flex h-full flex-col justify-between">
         <div className="flex w-full flex-col gap-2 md:w-[186px] md:gap-4">
