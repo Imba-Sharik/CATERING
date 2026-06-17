@@ -5,11 +5,11 @@ import { MobileMenu } from "./mobile-menu";
 
 export function SiteHeader() {
   return (
-    <header className="sticky top-0 z-40 flex w-full items-center bg-background px-6 py-2.5 lg:py-2 lg:px-[clamp(1.5rem,9.62vw_-_4.66rem,4rem)]">
+    <header className="sticky top-0 z-50 flex w-full items-center bg-background px-6 py-2.5 lg:py-2 lg:px-[clamp(1.5rem,9.62vw_-_4.66rem,4rem)]">
       <div className="flex flex-1 items-center justify-between gap-4">
         <Link
           href="#hero"
-          className="flex items-center gap-[22px] lg:gap-[clamp(1.5rem,9.62vw_-_4.66rem,4rem)]"
+          className="relative z-50 flex items-center gap-[22px] lg:gap-[clamp(1.5rem,9.62vw_-_4.66rem,4rem)]"
         >
           <Image
             src="/images/hero/logomark.svg"

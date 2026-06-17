@@ -1,13 +1,28 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Image from "next/image";
+import type { CSSProperties } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 import { NAV_ITEMS } from "@/shared/config/nav";
 
 export function MobileMenu() {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false); // оверлей в DOM (держим на время анимации выхода)
+  const [show, setShow] = useState(false); // активное (проявленное) состояние
+
+  // Монтирование + переключение анимации входа/выхода
+  useEffect(() => {
+    if (open) {
+      setMounted(true);
+      // следующий кадр — включаем проявление (чтобы сработал transition с 0)
+      const raf = requestAnimationFrame(() => setShow(true));
+      return () => cancelAnimationFrame(raf);
+    }
+    setShow(false);
+    const t = setTimeout(() => setMounted(false), 350); // = длительности transition оверлея
+    return () => clearTimeout(t);
+  }, [open]);
 
   // Блок скролла body + закрытие по Esc, пока меню открыто
   useEffect(() => {
@@ -29,63 +44,53 @@ export function MobileMenu() {
 
   return (
     <>
-      {/* Триггер — бургер в хедере (только мобайл) */}
+      {/* Триггер — бургер/крестик в хедере (только мобайл). Лого не дублируем:
+          постоянный логотип остаётся в SiteHeader (z выше оверлея) → не мигает */}
       <button
         type="button"
-        aria-label="Открыть меню"
+        aria-label={open ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={open}
-        onClick={() => setOpen(true)}
-        className="flex size-6 items-center justify-center text-foreground lg:hidden"
+        onClick={() => setOpen((v) => !v)}
+        className="relative z-50 flex size-6 items-center justify-center text-foreground lg:hidden"
       >
-        <Menu className="size-6" strokeWidth={1.5} />
+        {/* Кроссфейд иконок: обе в одной точке, переключаем opacity/scale */}
+        <Menu
+          aria-hidden
+          strokeWidth={1.5}
+          className={`absolute size-6 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            open ? "rotate-90 scale-75 opacity-0" : "rotate-0 scale-100 opacity-100"
+          }`}
+        />
+        <X
+          aria-hidden
+          strokeWidth={1.5}
+          className={`absolute size-6 transition-all duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] ${
+            open ? "rotate-0 scale-100 opacity-100" : "-rotate-90 scale-75 opacity-0"
+          }`}
+        />
       </button>
 
-      {/* Фуллскрин-оверлей */}
-      {open && (
+      {/* Фуллскрин-оверлей — только навигация, без дубля шапки */}
+      {mounted && (
         <div
           role="dialog"
           aria-modal="true"
           aria-label="Меню"
-          className="fixed inset-0 z-50 flex flex-col overflow-y-auto bg-background lg:hidden"
+          data-show={show}
+          className="menu-overlay fixed inset-0 z-40 flex flex-col overflow-y-auto bg-background lg:hidden"
         >
-          {/* Хедер оверлея — лого + крестик */}
-          <div className="flex w-full items-center justify-between px-6 py-2.5">
-            <Link
-              href="#hero"
-              onClick={() => setOpen(false)}
-              className="flex items-center gap-[22px]"
-            >
-              <Image
-                src="/images/hero/logomark.svg"
-                alt="Catering by Loft Hall"
-                width={41}
-                height={26}
-                unoptimized
-                className="h-[20px] w-[27px]"
-              />
-              <span className="text-sm whitespace-nowrap">
-                Catering by Loft Hall
-              </span>
-            </Link>
-
-            <button
-              type="button"
-              aria-label="Закрыть меню"
-              onClick={() => setOpen(false)}
-              className="flex size-6 items-center justify-center text-foreground"
-            >
-              <X className="size-6" strokeWidth={1.5} />
-            </button>
-          </div>
-
-          {/* Навигация — по центру */}
+          {/* Навигация — по центру, пункты появляются каскадом */}
           <nav className="flex flex-1 flex-col items-center justify-center gap-3">
-            {NAV_ITEMS.map((item) => (
+            {NAV_ITEMS.map((item, i) => (
               <Link
                 key={item.href}
                 href={item.href}
                 onClick={() => setOpen(false)}
-                className="px-6 py-2.5 text-center text-base whitespace-nowrap text-foreground/90 transition-colors hover:text-foreground"
+                data-show={show}
+                style={
+                  { "--menu-delay": `${0.08 + i * 0.05}s` } as CSSProperties
+                }
+                className="menu-item px-6 py-2.5 text-center text-base whitespace-nowrap text-foreground/90 hover:text-foreground"
               >
                 {item.label}
               </Link>

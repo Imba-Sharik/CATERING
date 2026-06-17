@@ -193,4 +193,42 @@
       transition: none;
     }
   }
+
+  /*
+    Мобильное меню: оверлей мягко проявляется (opacity), пункты — каскадом
+    (translateY + blur→sharp, в стиле .reveal). Stagger через --menu-i.
+    Состояние переключает data-show. Анимируем только GPU-свойства.
+  */
+  .menu-overlay {
+    opacity: 0;
+    transition: opacity 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity;
+  }
+  .menu-overlay[data-show="true"] {
+    opacity: 1;
+  }
+  .menu-item {
+    opacity: 0;
+    transform: translateY(0.75rem);
+    filter: blur(0.375rem);
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1) var(--menu-delay, 0s),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1) var(--menu-delay, 0s),
+      filter 0.5s cubic-bezier(0.22, 1, 0.36, 1) var(--menu-delay, 0s);
+    will-change: opacity, transform;
+  }
+  .menu-item[data-show="true"] {
+    opacity: 1;
+    transform: none;
+    filter: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .menu-overlay,
+    .menu-item {
+      opacity: 1;
+      transform: none;
+      filter: none;
+      transition: none;
+    }
+  }
 }
