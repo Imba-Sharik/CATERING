@@ -36,6 +36,7 @@ export function Positioning() {
             sizes="(max-width: 768px) 100vw, 1280px"
             className="object-cover object-bottom"
           />
+          <div className="absolute inset-0 bg-black/34" />
         </Reveal>
 
         <div className="flex flex-col gap-8 md:flex-row md:flex-wrap md:items-center md:gap-x-[120px] md:gap-y-6">
