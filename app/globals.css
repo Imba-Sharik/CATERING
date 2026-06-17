@@ -93,6 +93,9 @@
   }
   html {
     scroll-behavior: smooth;
+    /* Явный чёрный фон: иначе html прозрачный и при оверскролле/смене
+       панели встроенного браузера (Telegram, Safari) сверху просвечивает. */
+    @apply bg-background;
   }
   body {
     @apply bg-background text-foreground font-sans;
