@@ -60,14 +60,14 @@ function FormatCard({ card }: { card: FormatCard }) {
             src={card.image}
             alt={card.title}
             fill
-            sizes="100vw"
+            sizes="(min-width: 768px) 1px, 100vw"
             className="object-cover md:hidden"
           />
           <Image
             src={card.imageDesktop}
             alt={card.title}
             fill
-            sizes="(max-width: 1280px) 50vw, 320px"
+            sizes="(max-width: 767px) 1px, (max-width: 1280px) 50vw, 320px"
             className="hidden object-cover md:block"
           />
         </>

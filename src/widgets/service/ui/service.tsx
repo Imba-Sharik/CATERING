@@ -21,7 +21,7 @@ export function Service() {
         alt=""
         fill
         quality={85}
-        sizes="100vw"
+        sizes="(min-width: 768px) 100vw, 1px"
         className="pointer-events-none hidden object-cover md:block"
       />
 
@@ -50,7 +50,7 @@ export function Service() {
               src="/images/service/service-bg-v2.jpg"
               alt=""
               fill
-              sizes="100vw"
+              sizes="(min-width: 768px) 1px, 100vw"
               className="object-cover"
             />
           </div>

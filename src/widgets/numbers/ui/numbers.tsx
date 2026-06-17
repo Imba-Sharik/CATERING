@@ -20,7 +20,7 @@ export function Numbers() {
         alt=""
         fill
         quality={85}
-        sizes="100vw"
+        sizes="(min-width: 1280px) 100vw, 1px"
         className="pointer-events-none hidden object-cover xl:block"
       />
 
@@ -54,7 +54,7 @@ export function Numbers() {
               src="/images/numbers/numbers-bg-v2.jpg"
               alt=""
               fill
-              sizes="100vw"
+              sizes="(min-width: 1280px) 1px, 100vw"
               className="object-cover"
             />
           </div>
