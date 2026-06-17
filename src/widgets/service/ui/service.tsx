@@ -17,7 +17,7 @@ export function Service() {
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-section md:items-center">
       {/* Десктоп: фуллскрин-фон */}
       <Image
-        src="/images/service/service-bg.jpg"
+        src="/images/service/service-bg-v2.jpg"
         alt=""
         fill
         quality={85}
@@ -47,7 +47,7 @@ export function Service() {
           {/* Мобайл: контейнерное фото */}
           <div className="relative aspect-[358/256] w-full overflow-hidden rounded-sm md:hidden">
             <Image
-              src="/images/service/service-bg.jpg"
+              src="/images/service/service-bg-v2.jpg"
               alt=""
               fill
               sizes="100vw"

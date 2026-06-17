@@ -33,7 +33,7 @@ export function SiteFooter() {
       className="relative flex min-h-[600px] flex-col overflow-hidden border-t border-foreground bg-background md:min-h-[317px]"
     >
       <Image
-        src="/images/footer/footer-bg.jpg"
+        src="/images/footer/footer-bg-v2.jpg"
         alt=""
         fill
         quality={85}

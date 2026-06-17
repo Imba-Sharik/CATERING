@@ -5,17 +5,17 @@ import { Reveal } from "@/shared/ui/reveal";
 
 const CARDS = [
   {
-    image: "/images/decor/decor-1.jpg",
+    image: "/images/decor/decor-1-v2.jpg",
     title: "Посуда и сервировка",
     subtitle: "Подбираем под формат и визуальную концепцию мероприятия",
   },
   {
-    image: "/images/decor/decor-2.jpg",
+    image: "/images/decor/decor-2-v2.jpg",
     title: "Текстиль",
     subtitle: "Детали оформления, создающие цельный образ события",
   },
   {
-    image: "/images/decor/decor-3.jpg",
+    image: "/images/decor/decor-3-v2.jpg",
     title: "Мебель",
     subtitle: "Фуршетные и банкетные столы, барные станции",
   },

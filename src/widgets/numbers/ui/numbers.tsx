@@ -16,7 +16,7 @@ export function Numbers() {
     <section className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-section xl:items-center">
       {/* Десктоп: фуллскрин-фон */}
       <Image
-        src="/images/numbers/numbers-bg.jpg"
+        src="/images/numbers/numbers-bg-v2.jpg"
         alt=""
         fill
         quality={85}
@@ -51,7 +51,7 @@ export function Numbers() {
           {/* Мобайл: контейнерное фото */}
           <div className="relative aspect-[358/256] w-full overflow-hidden rounded-sm xl:hidden">
             <Image
-              src="/images/numbers/numbers-bg.jpg"
+              src="/images/numbers/numbers-bg-v2.jpg"
               alt=""
               fill
               sizes="100vw"

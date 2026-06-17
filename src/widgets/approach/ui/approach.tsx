@@ -22,7 +22,7 @@ export function Approach() {
       className="relative flex min-h-screen flex-col justify-center overflow-hidden bg-background py-section"
     >
       <Image
-        src="/images/approach/approach-bg.jpg"
+        src="/images/approach/approach-bg-v2.jpg"
         alt=""
         fill
         quality={85}

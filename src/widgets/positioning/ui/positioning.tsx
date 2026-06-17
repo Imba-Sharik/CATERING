@@ -29,12 +29,12 @@ export function Positioning() {
           className="relative aspect-[358/269] w-full overflow-hidden rounded-sm md:aspect-[1280/463]"
         >
           <Image
-            src="/images/positioning/positioning.jpg"
+            src="/images/positioning/positioning-v2.jpg"
             alt="Кейтеринг на открытой площадке у воды"
             fill
             quality={85}
             sizes="(max-width: 768px) 100vw, 1280px"
-            className="object-cover"
+            className="object-cover object-bottom"
           />
         </Reveal>
 

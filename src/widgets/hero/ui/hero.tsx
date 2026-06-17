@@ -11,7 +11,7 @@ export function Hero() {
       {/* Фон */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
         <Image
-          src="/images/hero/hero-bg.jpg"
+          src="/images/hero/hero-bg-v2.jpg"
           alt=""
           fill
           priority

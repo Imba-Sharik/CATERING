@@ -5,13 +5,13 @@ import { Button } from "@/shared/ui/button";
 import { Reveal } from "@/shared/ui/reveal";
 
 const CARDS = [
-  { image: "/images/prices/price-1.jpg", title: "Завтрак", price: "от 1 500 ₽" },
-  { image: "/images/prices/price-2.jpg", title: "Кофе-брейк", price: "от 1 100 ₽" },
-  { image: "/images/prices/price-3.jpg", title: "Обед", price: "от 2 000 ₽" },
-  { image: "/images/prices/price-4.jpg", title: "Фуршет", price: "от 4 500 ₽" },
-  { image: "/images/prices/price-5.jpg", title: "Банкет", price: "от 7 500 ₽" },
+  { image: "/images/prices/price-1-v2.jpg", title: "Завтрак", price: "от 1 500 ₽" },
+  { image: "/images/prices/price-2-v2.jpg", title: "Кофе-брейк", price: "от 1 100 ₽" },
+  { image: "/images/prices/price-3-v2.jpg", title: "Обед", price: "от 2 000 ₽" },
+  { image: "/images/prices/price-4-v2.jpg", title: "Фуршет", price: "от 4 500 ₽" },
+  { image: "/images/prices/price-5-v2.jpg", title: "Банкет", price: "от 7 500 ₽" },
   {
-    image: "/images/prices/price-6.jpg",
+    image: "/images/prices/price-6-v2.jpg",
     title: "Гала-ужин",
     price: "Рассчитывается индивидуально",
   },
