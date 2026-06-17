@@ -57,7 +57,7 @@ export function Prices() {
           <Reveal
             as="p"
             delay={120}
-            className="h-[64px] w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-sm font-normal text-muted-foreground md:h-auto md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm"
+            className="w-[171px] rounded-sm border border-muted-foreground px-3 py-3 text-sm font-normal text-muted-foreground md:w-auto md:max-w-[255px] md:rounded-md md:px-6 md:py-4 md:text-sm"
           >
             Сервис: +20% от стоимости меню
             <br className="hidden md:inline" />

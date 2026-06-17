@@ -27,6 +27,9 @@ const OPTIONS = [
   "Кейтеринг на свадьбу",
 ];
 
+// Явная заливка выбранного чипа (видно и на мобайле, где нет поля «Формат»).
+const CHIP_ACTIVE = "bg-foreground text-background hover:bg-foreground";
+
 export function FormRequest() {
   const [format, setFormat] = React.useState("");
 
@@ -99,10 +102,11 @@ export function FormRequest() {
             <Field label="Количество гостей" />
 
             <div className="flex w-full flex-col items-center gap-4">
-              <div className="flex w-full flex-col items-center gap-3">
-                <div className="w-[160px] border-t border-foreground" />
-                <span className="text-sm">Формат</span>
-              </div>
+              <Field
+                label="Формат"
+                value={format}
+                onChange={(e) => setFormat(e.target.value)}
+              />
               <div className="grid w-fit grid-cols-2 gap-2">
                 {OPTIONS.map((option) => (
                   <Chip
@@ -111,7 +115,7 @@ export function FormRequest() {
                     onClick={() =>
                       setFormat((prev) => (prev === option ? "" : option))
                     }
-                    className={cn("w-full", format === option && "bg-foreground/15")}
+                    className={cn("w-full", format === option && CHIP_ACTIVE)}
                   >
                     {option}
                   </Chip>
@@ -149,7 +153,7 @@ export function FormRequest() {
                   onClick={() =>
                     setFormat((prev) => (prev === option ? "" : option))
                   }
-                  className={cn("w-full", format === option && "bg-foreground/15")}
+                  className={cn("w-full", format === option && CHIP_ACTIVE)}
                 >
                   {option}
                 </Chip>
