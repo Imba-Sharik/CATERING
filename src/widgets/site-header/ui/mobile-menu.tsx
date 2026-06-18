@@ -11,15 +11,22 @@ export function MobileMenu() {
   const [mounted, setMounted] = useState(false); // оверлей в DOM (держим на время анимации выхода)
   const [show, setShow] = useState(false); // активное (проявленное) состояние
 
-  // Монтирование + переключение анимации входа/выхода
+  // Монтаж/размонтаж — в обработчиках; setShow для входа/выхода — в колбэках эффекта
+  const openMenu = () => {
+    setMounted(true);
+    setOpen(true);
+  };
+  const closeMenu = () => {
+    setShow(false); // запускаем анимацию выхода
+    setOpen(false);
+  };
+
   useEffect(() => {
     if (open) {
-      setMounted(true);
       // следующий кадр — включаем проявление (чтобы сработал transition с 0)
       const raf = requestAnimationFrame(() => setShow(true));
       return () => cancelAnimationFrame(raf);
     }
-    setShow(false);
     const t = setTimeout(() => setMounted(false), 350); // = длительности transition оверлея
     return () => clearTimeout(t);
   }, [open]);
@@ -32,7 +39,7 @@ export function MobileMenu() {
     document.body.style.overflow = "hidden";
 
     const onKeyDown = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
+      if (e.key === "Escape") closeMenu();
     };
     window.addEventListener("keydown", onKeyDown);
 
@@ -50,7 +57,7 @@ export function MobileMenu() {
         type="button"
         aria-label={open ? "Закрыть меню" : "Открыть меню"}
         aria-expanded={open}
-        onClick={() => setOpen((v) => !v)}
+        onClick={() => (open ? closeMenu() : openMenu())}
         className="relative z-50 flex size-6 items-center justify-center text-foreground lg:hidden"
       >
         {/* Кроссфейд иконок: обе в одной точке, переключаем opacity/scale */}
@@ -85,7 +92,7 @@ export function MobileMenu() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={() => setOpen(false)}
+                onClick={closeMenu}
                 data-show={show}
                 style={
                   { "--menu-delay": `${0.08 + i * 0.05}s` } as CSSProperties

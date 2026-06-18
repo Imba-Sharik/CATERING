@@ -6,9 +6,11 @@ import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Button } from "@/shared/ui/button";
 import { Field } from "@/shared/ui/field";
+import { PhoneField } from "@/shared/ui/phone-field";
 import { Chip } from "@/shared/ui/chip";
 import { Reveal } from "@/shared/ui/reveal";
 import { cn } from "@/shared/lib/utils";
+import { isValidPhone } from "@/shared/lib/phone";
 import { FORMAT_EVENT } from "@/shared/lib/format-request";
 import { submitRequest } from "@/features/submit-request";
 import type { RequestFormPayload } from "@/shared/lib/mail/types";
@@ -56,6 +58,7 @@ export function FormRequest() {
     "idle",
   );
   const [errorMessage, setErrorMessage] = React.useState("");
+  const [phoneError, setPhoneError] = React.useState("");
 
   React.useEffect(() => {
     function onSelect(e: Event) {
@@ -67,14 +70,27 @@ export function FormRequest() {
 
   function updateField(key: keyof RequestFormPayload, value: string) {
     setForm((prev) => ({ ...prev, [key]: value }));
+    if (key === "phone") setPhoneError("");
     if (status !== "idle") {
       setStatus("idle");
       setErrorMessage("");
     }
   }
 
+  function validatePhone() {
+    setPhoneError(
+      form.phone && !isValidPhone(form.phone) ? "Введите номер полностью" : "",
+    );
+  }
+
   async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+
+    if (!isValidPhone(form.phone)) {
+      setPhoneError("Введите корректный номер телефона");
+      return;
+    }
+
     setStatus("loading");
     setErrorMessage("");
 
@@ -92,6 +108,23 @@ export function FormRequest() {
 
   function renderField(label: (typeof FIELDS)[number]) {
     const key = FIELD_KEYS[label];
+
+    if (key === "phone") {
+      return (
+        <PhoneField
+          key={label}
+          label={label}
+          name={key}
+          value={form.phone}
+          onValueChange={(v) => updateField("phone", v)}
+          onBlur={validatePhone}
+          error={phoneError}
+          required
+          disabled={status === "loading"}
+        />
+      );
+    }
+
     return (
       <Field
         key={label}

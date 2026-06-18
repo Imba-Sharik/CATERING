@@ -29,5 +29,11 @@ export function parseRequestPayload(body: unknown): RequestFormPayload {
     }
   }
 
+  // РФ-номер: ровно 11 цифр, код страны 7 или 8
+  const phoneDigits = payload.phone.replace(/\D/g, "");
+  if (phoneDigits.length !== 11 || !/^[78]/.test(phoneDigits)) {
+    throw new Error(`Field "phone" is invalid`);
+  }
+
   return payload;
 }
