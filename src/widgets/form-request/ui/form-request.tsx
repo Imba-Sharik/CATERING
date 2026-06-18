@@ -7,6 +7,7 @@ import { SectionLabel } from "@/shared/ui/section-label";
 import { Button } from "@/shared/ui/button";
 import { Field } from "@/shared/ui/field";
 import { PhoneField } from "@/shared/ui/phone-field";
+import { DateField } from "@/shared/ui/date-field";
 import { Chip } from "@/shared/ui/chip";
 import { Reveal } from "@/shared/ui/reveal";
 import { cn } from "@/shared/lib/utils";
@@ -120,6 +121,19 @@ export function FormRequest() {
           onBlur={validatePhone}
           error={phoneError}
           required
+          disabled={status === "loading"}
+        />
+      );
+    }
+
+    if (key === "eventDate") {
+      return (
+        <DateField
+          key={label}
+          label={label}
+          name={key}
+          value={form.eventDate}
+          onValueChange={(v) => updateField("eventDate", v)}
           disabled={status === "loading"}
         />
       );
