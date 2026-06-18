@@ -3,6 +3,7 @@ import { Container } from "@/shared/ui/container";
 import { SectionLabel } from "@/shared/ui/section-label";
 import { Button } from "@/shared/ui/button";
 import { Reveal } from "@/shared/ui/reveal";
+import { AnchorLink } from "@/shared/ui/anchor-link";
 
 const CARDS = [
   { image: "/images/prices/price-1-v2.jpg", title: "Завтрак", price: "от 1 500 ₽" },
@@ -81,7 +82,7 @@ export function Prices() {
               variant="outline"
               className="h-[30px] w-fit rounded-lg px-4 py-2 text-sm md:h-[38px] md:rounded-md md:px-6 md:text-sm"
             >
-              <a href="#form">Отправить заявку</a>
+              <AnchorLink href="#form">Отправить заявку</AnchorLink>
             </Button>
           </Reveal>
         </div>

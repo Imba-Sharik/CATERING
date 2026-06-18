@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { Button } from "@/shared/ui/button";
 import { Reveal } from "@/shared/ui/reveal";
+import { AnchorLink } from "@/shared/ui/anchor-link";
 
 export function Hero() {
   return (
@@ -61,14 +62,14 @@ export function Hero() {
             variant="outline"
             className="h-[36px] w-full text-sm whitespace-nowrap md:h-[38px]"
           >
-            <a href="#form">Получить предложение</a>
+            <AnchorLink href="#form">Получить предложение</AnchorLink>
           </Button>
           <Button
             asChild
             variant="outline"
             className="h-[36px] w-full text-sm whitespace-nowrap md:h-[38px]"
           >
-            <a href="#formats">Смотреть форматы</a>
+            <AnchorLink href="#formats">Смотреть форматы</AnchorLink>
           </Button>
         </Reveal>
       </div>

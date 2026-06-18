@@ -92,7 +92,17 @@ export function MobileMenu() {
               <Link
                 key={item.href}
                 href={item.href}
-                onClick={closeMenu}
+                onClick={(e) => {
+                  e.preventDefault();
+                  closeMenu();
+                  // ждём снятия body overflow:hidden, иначе скролл не сработает
+                  requestAnimationFrame(() =>
+                    document
+                      .getElementById(item.href.slice(1))
+                      ?.scrollIntoView({ behavior: "smooth" }),
+                  );
+                  history.replaceState(null, "", item.href);
+                }}
                 data-show={show}
                 style={
                   { "--menu-delay": `${0.08 + i * 0.05}s` } as CSSProperties
